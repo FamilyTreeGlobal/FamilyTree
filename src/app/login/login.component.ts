@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         });
    }
 
-  ngOnInit() {
+  ngOnInit() { 
         let body = document.getElementsByTagName('body')[0];
         body.classList.add("body-background-img");
         body.classList.remove("body-background-color");
