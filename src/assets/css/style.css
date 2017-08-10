@@ -17,7 +17,7 @@ box-shadow: -1px 3px 38px -8px rgba(0,0,0,0.75);*/
 
 }
 .body-background-img {   
-background: url(../../assets/images/treee.jpg) no-repeat center center fixed; 
+/* background: url(../../assets/images/treee.jpg) no-repeat center center fixed;  */
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;

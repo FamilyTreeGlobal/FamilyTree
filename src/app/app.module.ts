@@ -8,7 +8,6 @@ import { LoginModule } from './login/login.module';
 import { HomeModule } from './home/home.module';
 
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -19,6 +18,7 @@ import { HomeModule } from './home/home.module';
     FormsModule,
     LoginModule,    
     ReactiveFormsModule,  
+    HomeModule,
     RouterModule.forRoot(ROUTES,{ useHash: false })
   ],
   providers: [],

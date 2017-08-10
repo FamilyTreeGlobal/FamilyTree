@@ -10,9 +10,9 @@ declare var System: any;
 export const ROUTES: Routes = [
   { path: '', component:LoginComponent },
   { path: 'forgotPassword', component:ForgotpasswordComponent },
-  {
-		path: 'home',
-		loadChildren: 'app/home/home.module#HomeModule'
-	}
+  // {
+	// 	path: 'home',
+	// 	loadChildren: 'app/home/home.module#HomeModule'
+	// }
   // { path: 'home', component:HomeComponent }
 ];
