@@ -23,8 +23,43 @@
         </div>
     </div>
     <div>
-        <a    (click)="onTabClicks(1)">profile</a>
-        <a   (click)="onTabClicks(2)">profile</a>
+         <div id="sidebar-wrapper"><!-- Sidebar start -->
+					<ul class="sidebar-nav">
+						
+                        <li id="familymenu">
+                          <a (click)="onTabClicks(1)"><i aria-hidden="true">
+                            <img src="../assets/images/user.png"> </i>
+                            <span style="color:#000000;" id="menu-toggleprof">My profile</span>  </a>
+                        </li>
+                        <li id="familymenu">
+                            <a (click)="onTabClicks(2)"> <i aria-hidden="true">
+                                <img src="../assets/images/familymemwhite.png"> </i> 
+                                <span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp;My Family Members</span> </a>
+                        </li>
+                       
+                        <li id="familymenu">
+                            <a (click)="onTabClicks(3)"> <i aria-hidden="true">
+                            <img src="../assets/images/chat.png"> </i> 
+                            <span id="familymenu1"> Chat</span> </a>
+                        </li>
+                        <li id="familymenu">
+                            <a href="invitation.html"> <i aria-hidden="true">
+                            <img src="../assets/images/invitation.png"> </i> 
+                            <span id="familymenu1"> Invitations</span> </a>
+                        </li>
+                        <li id="familymenu">
+                            <a href="Requestsrec.html"><i aria-hidden="true">
+                            <img src="../assets/images/request.png"> </i> 
+                            <span id="familymenu1"> Requests </span> </a>
+                        </li>
+                        <li id="familymenu">
+                        <a href="familynews.html"><i aria-hidden="true">
+                            <img src="../assets/images/news.png"> </i> 
+                            <span id="familymenu1"> Family news </span> </a>
+                        </li>
+                    </ul>
+                    
     </div>
+                   
     <router-outlet></router-outlet>
 </div>

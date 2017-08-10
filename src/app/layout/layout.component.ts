@@ -42,14 +42,14 @@ export class LayoutComponent implements OnInit {
         } else if (index == 1) {
             vm.tab2 = true;
             // vm.sharedService.setOption(2);
-            vm.router.navigate(['/test/profile']);
+            vm.router.navigate(['/app/profile']);
         } else if (index == 2) {
             vm.tab3 = true;
             // vm.sharedService.setOption(3);
-            vm.router.navigate(['/test/profile']);
+            vm.router.navigate(['/app/home']);
         } else if (index == 3) {
             vm.tab4 = true;
-             vm.router.navigate(['/testshow']);
+             vm.router.navigate(['/app/chat']);
             // vm.sharedService.setOption(4);
             //vm.router.navigate(['/emergencyservice']);
         } else if (index == 4) {

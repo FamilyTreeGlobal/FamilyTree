@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
    
     private onLogin(val: any, valid: any) {
         let vm = this;
-        this.router.navigate(['/test/home']);
+        this.router.navigate(['/app/home']);
         // this.loginService.authenticate(val)
         //   .subscribe(
         //       data => {         
