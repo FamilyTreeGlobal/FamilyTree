@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { HOME_ROUTES } from './home.routes';
+import { HomeComponent } from './home.component';
+import { ProfileComponent } from '../profile/profile.component';
+import { HomeRoutingModule } from './home.routes';
 import {LayoutModule} from '../layout/layout.module';
+
+
 
 @NgModule({
   imports: [
@@ -13,12 +16,13 @@ import {LayoutModule} from '../layout/layout.module';
     , FormsModule
     , ReactiveFormsModule
     , RouterModule
-    , HOME_ROUTES    
+    , HomeRoutingModule    
     ,LayoutModule
     
   ],
   declarations: [
-     HomeComponent
+     HomeComponent,
+     ProfileComponent
   ]
 })
 export class HomeModule { }

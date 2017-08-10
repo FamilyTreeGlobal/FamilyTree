@@ -1,3 +1,29 @@
-<p>
-  layout works!
-</p>
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">   
+            <div class="navbar-header" style=" float: left;">
+                        <a class="navbar-brand" href="#" id="fmlogo">Family Tree</a>
+                      </div></div>
+                    <div class="col-md-6">  
+                        <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown" id="settlogo">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog">
+                            </span> Settings <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" id="settlogodp">
+                            <li id="settlogodp1"><a href="privacy.html">Privacy</a></li>
+                            <li id="settlogodp1"><a href="general.html">General</a></li>
+                            <li id="settlogodp1"><a href="notifications.html">Notifications</a></li>
+                            <li id="settlogodp1"><a href="groups.html">Create Family Group</a></li>
+                        </ul>
+                    </li>
+                    <li data-target="#myModal" data-toggle="modal" id="logoutt"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+    </div>
+
+         
+        
+    </div>
+    <router-outlet></router-outlet>
+</div>

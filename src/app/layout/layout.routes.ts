@@ -1,21 +1,14 @@
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-import { HomeComponent } from '../home/home/home.component';
-//import { ProjectInfo } from '../project/project-info/project-info.component';
-//import { Project } from '../project/project';
-//import { TimesheetComponent } from '../timesheet/timesheet.component';
-//import { TestshowComponent } from '../testshow/testshow.component';
+import { HomeComponent } from '../home/home.component';
+import { ProfileComponent } from '../profile/profile.component';
 const routes: Routes = [
   {
-    path: ''
-    , component: LayoutComponent
-    ,
+    path: ''    , component: LayoutComponent ,
     children: [
-      { path: '', component: HomeComponent }
-    //   ,
-    //   { path: 'project', component: ProjectInfo },
-    //   { path: 'timesheet', component: TimesheetComponent },
-    //   { path: 'testshow', component: TestshowComponent }
+      { path: '', component: HomeComponent },
+      { path: 'profile', component: ProfileComponent },
+    
       
     ]
   }

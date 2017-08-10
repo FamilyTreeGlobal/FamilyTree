@@ -4,23 +4,20 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
 import { LoginModule } from './login/login.module';
-import { HomeComponent } from './home/home/home.component';
-import { LayoutComponent } from './layout/layout.component';
+import { HomeModule } from './home/home.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    LayoutComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,  
     FormsModule,
-    LoginModule,
+    LoginModule,    
     ReactiveFormsModule,  
     RouterModule.forRoot(ROUTES,{ useHash: false })
   ],
