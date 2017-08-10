@@ -42,11 +42,11 @@ export class LayoutComponent implements OnInit {
         } else if (index == 1) {
             vm.tab2 = true;
             // vm.sharedService.setOption(2);
-            vm.router.navigate(['/profile']);
+            vm.router.navigate(['/test/profile']);
         } else if (index == 2) {
             vm.tab3 = true;
             // vm.sharedService.setOption(3);
-            vm.router.navigate(['/profile']);
+            vm.router.navigate(['/test/profile']);
         } else if (index == 3) {
             vm.tab4 = true;
              vm.router.navigate(['/testshow']);

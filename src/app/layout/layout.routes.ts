@@ -4,9 +4,9 @@ import { HomeComponent } from '../home/home.component';
 import { ProfileComponent } from '../profile/profile.component';
 const routes: Routes = [
   {
-    path: ''    , component: LayoutComponent ,
+    path: 'test'    , component: LayoutComponent ,
     children: [
-      { path: '', component: HomeComponent },
+      { path: 'home', component: HomeComponent },
       { path: 'profile', component: ProfileComponent }
     ]
   }

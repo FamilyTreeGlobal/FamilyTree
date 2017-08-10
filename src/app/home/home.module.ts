@@ -17,12 +17,11 @@ import {LayoutModule} from '../layout/layout.module';
     , ReactiveFormsModule
     , RouterModule
     , HomeRoutingModule    
-    ,LayoutModule
-    
+    , LayoutModule
   ],
   declarations: [
-     HomeComponent,
-     ProfileComponent
+    // HomeComponent,
+     //ProfileComponent
   ]
 })
 export class HomeModule { }

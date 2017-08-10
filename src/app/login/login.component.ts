@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { LoginService  } from '../../_services/index';
 import { USER_DATA } from '../common/user';
 import { AppModule } from '../app.module';
+import {HomeComponent} from '../home/home.component';
+
 
 @Component({
   selector: 'app-login',
@@ -34,7 +36,7 @@ export class LoginComponent implements OnInit {
    
     private onLogin(val: any, valid: any) {
         let vm = this;
-        this.router.navigate(['/home']);
+        this.router.navigate(['/test/home']);
         // this.loginService.authenticate(val)
         //   .subscribe(
         //       data => {         

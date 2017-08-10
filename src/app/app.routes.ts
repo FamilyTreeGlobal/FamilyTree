@@ -8,11 +8,14 @@ import { ForgotpasswordComponent } from './login/forgotpassword.component';
 declare var System: any;
 
 export const ROUTES: Routes = [
-  { path: '', component:LoginComponent },
-  { path: 'forgotPassword', component:ForgotpasswordComponent },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+     { path: 'forgotPassword', component:ForgotpasswordComponent },
+     { path: '', loadChildren: './layout/layout.module#LayoutModule' },
+     { path: '', loadChildren: './login/login.module#LoginModule' }
   // {
 	// 	path: 'home',
 	// 	loadChildren: 'app/home/home.module#HomeModule'
-	// }
+  // },
+  
   // { path: 'home', component:HomeComponent }
 ];

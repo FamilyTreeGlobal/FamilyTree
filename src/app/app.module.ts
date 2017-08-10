@@ -5,7 +5,7 @@ import { ROUTES } from './app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
-import { HomeModule } from './home/home.module';
+//import { HomeModule } from './home/home.module';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { HomeModule } from './home/home.module';
     FormsModule,
     LoginModule,    
     ReactiveFormsModule,  
-    HomeModule,
+  //  HomeModule,
     RouterModule.forRoot(ROUTES,{ useHash: false })
   ],
   providers: [],
