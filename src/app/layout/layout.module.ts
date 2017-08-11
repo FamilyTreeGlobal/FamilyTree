@@ -8,10 +8,11 @@ import { LayoutComponent } from './layout.component';
 import { HomeComponent } from '../home/home.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { ChatComponent } from '../chat/chat.component';
+import { InvitationsComponent} from '../invitations/invitations.component';
 
 @NgModule({
   imports: [CommonModule, ROUTES, FormsModule, ReactiveFormsModule],
-  declarations: [LayoutComponent,HomeComponent,ProfileComponent,ChatComponent],
+  declarations: [LayoutComponent,HomeComponent,ProfileComponent,ChatComponent,InvitationsComponent],
   providers: []
 })
 export class LayoutModule {

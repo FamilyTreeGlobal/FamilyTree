@@ -6,8 +6,9 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { ChatComponent } from '../chat/chat.component';
+import { InvitationsComponent} from '../invitations/invitations.component';
 import { HomeRoutingModule } from './home.routes';
-import {LayoutModule} from '../layout/layout.module';
+import { LayoutModule} from '../layout/layout.module';
 
 
 

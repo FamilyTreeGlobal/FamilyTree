@@ -27,35 +27,35 @@
 					<ul class="sidebar-nav">
 						
                         <li id="familymenu">
-                          <a (click)="onTabClicks(1)"><i aria-hidden="true">
+                          <a (click)="onTabClicks(0)" ><i aria-hidden="true">
                             <img src="../assets/images/user.png"> </i>
-                            <span style="color:#000000;" id="menu-toggleprof">My profile</span>  </a>
+                            <span style="color:#000000;" [ngClass]="{ 'leftmenu_bar_active': tab1}" data-toggle="tab" id="menu-toggleprof">My profile</span>  </a>
                         </li>
                         <li id="familymenu">
-                            <a (click)="onTabClicks(2)"> <i aria-hidden="true">
+                            <a (click)="onTabClicks(1)" > <i aria-hidden="true">
                                 <img src="../assets/images/familymemwhite.png"> </i> 
-                                <span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp;My Family Members</span> </a>
+                                <span  [ngClass]="{ 'leftmenu_bar_active': tab2}" data-toggle="tab">&nbsp;&nbsp;&nbsp;My Family Members</span> </a>
                         </li>
                        
                         <li id="familymenu">
-                            <a (click)="onTabClicks(3)"> <i aria-hidden="true">
+                            <a (click)="onTabClicks(2)"> <i aria-hidden="true">
                             <img src="../assets/images/chat.png"> </i> 
-                            <span id="familymenu1"> Chat</span> </a>
+                            <span id="familymenu1" [ngClass]="{ 'leftmenu_bar_active': tab3}" data-toggle="tab"> Chat</span> </a>
                         </li>
                         <li id="familymenu">
-                            <a href="invitation.html"> <i aria-hidden="true">
+                            <a (click)="onTabClicks(3)"> <i aria-hidden="true">
                             <img src="../assets/images/invitation.png"> </i> 
-                            <span id="familymenu1"> Invitations</span> </a>
+                            <span id="familymenu1" [ngClass]="{ 'leftmenu_bar_active': tab4}" data-toggle="tab"> Invitations</span> </a>
                         </li>
                         <li id="familymenu">
                             <a href="Requestsrec.html"><i aria-hidden="true">
                             <img src="../assets/images/request.png"> </i> 
-                            <span id="familymenu1"> Requests </span> </a>
+                            <span id="familymenu1" [ngClass]="{ 'leftmenu_bar_active': tab5}" data-toggle="tab"> Requests </span> </a>
                         </li>
                         <li id="familymenu">
                         <a href="familynews.html"><i aria-hidden="true">
                             <img src="../assets/images/news.png"> </i> 
-                            <span id="familymenu1"> Family news </span> </a>
+                            <span id="familymenu1" [ngClass]="{ 'leftmenu_bar_active': tab6}" data-toggle="tab"> Family news </span> </a>
                         </li>
                     </ul>
                     

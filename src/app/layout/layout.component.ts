@@ -10,8 +10,8 @@ export class LayoutComponent implements OnInit {
   private countryName: string;
     private name: string = "William J";
     private role: string;
-    private tab1: boolean = true;
-    private tab2: boolean = false;
+    private tab1: boolean = false;
+    private tab2: boolean = true;
     private tab3: boolean = false;
     private tab4: boolean = false;
     private tab5: boolean = false;
@@ -38,22 +38,25 @@ export class LayoutComponent implements OnInit {
         if (index == 0) {
             vm.tab1 = true;
             // vm.sharedService.setOption(1);
-            vm.router.navigate(['']);
-        } else if (index == 1) {
+            vm.router.navigate(['/app/profile']);
+        } else
+         
+        if (index == 1) {
             vm.tab2 = true;
             // vm.sharedService.setOption(2);
-            vm.router.navigate(['/app/profile']);
+            vm.router.navigate(['/app/home']);
         } else if (index == 2) {
             vm.tab3 = true;
             // vm.sharedService.setOption(3);
-            vm.router.navigate(['/app/home']);
+            vm.router.navigate(['/app/chat']);
         } else if (index == 3) {
             vm.tab4 = true;
-             vm.router.navigate(['/app/chat']);
+             vm.router.navigate(['/app/invitations']);
             // vm.sharedService.setOption(4);
             //vm.router.navigate(['/emergencyservice']);
         } else if (index == 4) {
             vm.tab5 = true;
+            vm.router.navigate(['/app/invitations']);
             // vm.sharedService.setOption(5);
             //vm.router.navigate(['/adminusers']);
         }

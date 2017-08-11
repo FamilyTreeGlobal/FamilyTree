@@ -28,6 +28,10 @@ background-size: cover;
     font-family: "Roboto", sans-serif;
 }
 
+.leftmenu_bar_active {
+    color: #FFFFFF !important;
+}
+
 #signinbody #ci2{
 display:none;
 }
