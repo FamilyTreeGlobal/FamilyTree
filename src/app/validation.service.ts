@@ -3,7 +3,7 @@ export class ValidationService {
         let config = {
             'required': 'This field is required',
             'invalidName':'Invalid Name',
-            'invalidEmailAddress': 'Invalid email address',
+            'invalidEmailAddress': 'Invalid email address/phone',
             'invalidPassword': 'Password must be at least 6 characters long, and contain a number',
             'minlength': `Minimum length ${validatorValue.requiredLength}`,
             'invalidDescription':'Invalid Description',
@@ -25,6 +25,9 @@ export class ValidationService {
             {
                 return null;
             } 
+            else if(control.value.length==10){
+                return null;
+            }
             else 
             {
                 return { 'invalidEmailAddress': true };

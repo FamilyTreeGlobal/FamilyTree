@@ -2912,6 +2912,9 @@ border:px solid pink;padding:4px;
 
 input::-webkit-input-placeholder {color:  #999999 !important;padding:0px;font-size:16px;font-style:; font-family:;  }
 input[name=custname]{  color: #000000; font-size:14px;   padding-top:20px;}
+.input-name{
+     color: #000000; font-size:14px;   padding-top:20px;
+}
 
 /*Form Design*/
 .group{ 
