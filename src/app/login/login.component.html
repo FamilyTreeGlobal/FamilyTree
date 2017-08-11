@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value, loginForm.valid)">
+<form role="form" [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value, loginForm.valid)">
 <div class="container-fluid" id="main">
 		<div class="row">	    
 			<div class="col-sm-4" id="mainrow">
@@ -25,10 +25,10 @@
 						<tr>
 							<td>
 								<div class="group" id="group">
-									<input type="text" name="custname" formControlName="username" id="txtfname" required  />
+									<input type="text" name="custname" formControlName="username"  [ngClass]="!loginForm.controls['username'].valid? 'required-val':''"  />
 									<span class="bar"></span>
 									<label id="ci1">Email or phone number</label>
-									<control-messages [control]="loginForm.controls.username"></control-messages>
+									<control-messages [control]="loginForm.controls.username"></control-messages>									
 								</div>
 							</td>
 						</tr>			
@@ -42,7 +42,7 @@
 						<tr>
 							<td>
 								<div class="group">
-									<input type="password" name="custname" formControlName="password" id="txtlname" required  />
+									<input type="password" name="custname" formControlName="password"  [ngClass]="!loginForm.controls['password'].valid? 'required-val':''"  required  />
 									<span class="bar"></span>
 									<label id="cn1">Password</label>
 									<control-messages [control]="loginForm.controls.password"></control-messages>
@@ -55,7 +55,7 @@
 			<br><br>
 			<div class="col-md-12 text-center" id="signinbutton">				
 					<div class="col-md-4 ">
-						<button id="save" type="submit"><b>SIGN IN</b></button>
+						<button id="save" type="submit" [disabled]="!loginForm.valid"><b>SIGN IN</b></button>
 					</div>				
 			</div>
 			<br><br>
@@ -66,9 +66,9 @@
 					</div></a>
 				</div>
 				<div class="col-md-12 text-center" id="reg">
-					<a href="signup.html">
+					<a (click)="signup()">
 						<div class="col-md-4 ">
-							<button id="save" type="submit">Don't have an account ? Create here</button>
+							<button id="save" type="button">Don't have an account ? Create here</button>
 						</div>
 					</a>
 				</div>

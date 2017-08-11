@@ -1,5 +1,5 @@
 import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  FormGroup, Validators  , FormBuilder, FormControlName  , FormControl} from '@angular/forms';
 import { ValidationService } from '../validation.service';
 import { Router } from '@angular/router';
 import { LoginService  } from '../../_services/index';
@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   private loginForm: FormGroup;
   private message: string;
   private validationSummaryMsg:string;
+  private isPageLoad: boolean = true;
 
   constructor(private router: Router, private formBuilder: FormBuilder,private loginService:LoginService) {
     this.loginForm = this.formBuilder.group({
@@ -35,6 +36,8 @@ export class LoginComponent implements OnInit {
   
    
     private onLogin(val: any, valid: any) {
+      //  if (this.loginForm.valid) {
+        this.isPageLoad = false;
         let vm = this;
         this.router.navigate(['/app/home']);
         // this.loginService.authenticate(val)
@@ -49,11 +52,17 @@ export class LoginComponent implements OnInit {
         //             vm.validationSummaryMsg = "Please enter email or phone number";                    
         //             vm.router.navigate([`/login`]);
         //       });
+       // }
     }
     
     public forgotPassword(e: any) {
         let vm = this;        
         vm.router.navigate(['/forgotPassword']);  
+    }
+
+    public signup(e: any) {
+        let vm = this;        
+        vm.router.navigate(['/signup']);  
     }
 
     public register(e: any) {

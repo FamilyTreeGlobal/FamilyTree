@@ -6,6 +6,7 @@ import { LoginComponent } from './login.component';
 import { ValidationService } from '../validation.service';
 import { ControlMessages } from './controlMessages';
 import { ForgotpasswordComponent } from './forgotpassword.component';
+import { SignupComponent } from './signup.component';
 import {LoginRoutingModule} from './login.router';
 import { HomeModule } from '../home/home.module';
 
@@ -21,7 +22,8 @@ import { HomeModule } from '../home/home.module';
     declarations: [
       LoginComponent,
       ControlMessages,
-      ForgotpasswordComponent
+      ForgotpasswordComponent,
+      SignupComponent
         ],
     providers: [
         ValidationService

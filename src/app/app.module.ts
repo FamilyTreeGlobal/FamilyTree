@@ -5,17 +5,11 @@ import { ROUTES } from './app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
-//import { InvitationsComponent } from './invitations/invitations.component';
-//import { ChatComponent } from './chat/chat.component';
-//import { HomeModule } from './home/home.module';
 
 
 @NgModule({
   declarations: [
     AppComponent
-    //InvitationsComponent
-    
-    //ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +17,6 @@ import { LoginModule } from './login/login.module';
     FormsModule,
     LoginModule,    
     ReactiveFormsModule,  
-  //  HomeModule,
     RouterModule.forRoot(ROUTES,{ useHash: false })
   ],
   providers: [],
