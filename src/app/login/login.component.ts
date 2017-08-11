@@ -41,13 +41,13 @@ export class LoginComponent implements OnInit {
        if (this.loginForm.valid) {
         
         let vm = this;
-        this.router.navigate(['/app/home']);
+       this.router.navigate(['/app/home']);
         // this.loginService.authenticate(val)
         //   .subscribe(
         //       data => {         
         //           console.log('data'+data)      ;       
         //           USER_DATA.token=data.token;                               
-        //           this.router.navigate(['/home']);
+        //           this.router.navigate(['/app/home']);
         //       },
         //       error => {
         //             console.log(val.username+ val.password);        
@@ -67,8 +67,8 @@ export class LoginComponent implements OnInit {
         vm.router.navigate(['/signup']);  
     }
 
-    public register(e: any) {
-        let vm = this;        
-        vm.router.navigate(['/createUser']);        		
-    }  
+    // public register(e: any) {
+    //     let vm = this;        
+    //     vm.router.navigate(['/createUser']);        		
+    // }  
 }

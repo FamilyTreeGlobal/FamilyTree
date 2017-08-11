@@ -1,3 +1,127 @@
-<p>
-  signup works!
-</p>
+<div class="container-fluid" id="main">
+		<div class="row">	    
+			<div class="col-sm-4" id="mainrow">
+				<a href="#">Family Tree</a>
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<div class="container" id="signincontainer">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-2" id="signin">Create here</div>
+			</div>
+		</div>
+	</div>
+	<br>	
+	<form action="signinmob.html">
+		<div class="container">
+			<div class="row" >
+				<div class="col-md-12">
+					<div class="col-md-5">
+						<table id="cid">
+							<tr>
+								<td>
+									<div class="group">
+										<input  type="text" name="custname" id="txtfname" maxlength="10"  required onKeyUp="cid()" />
+										<span class="bar"></span>
+										<label id="ci1">Full name</label>
+										<label id="ci2">Please enter full name</label>
+									</div>
+								</td>
+							</tr>			
+						</table>
+					</div>
+				</div>
+				<br><br>
+				<div class="col-md-12">
+					<div class="col-md-5">
+						<table id="cname">
+							<tr>
+								<td>
+									<div class="group">
+										<input type="text" name="custname" id="txtlname" maxlength="10"  required onKeyUp="cname()" />
+										<span class="bar"></span>
+										<label id="cn1">Sur name</label>
+										<label id="cn2">Please enter sur name</label>
+									</div>
+								</td>
+							</tr>			
+						</table>
+					</div>
+				</div>
+				<br><br>
+				<div class="col-md-12">
+					<div id="genderupm" class="col-md-1"><input type="radio" name="gender" value="Male" required> Male</div>
+					<div id="genderupf" class="col-md-2"><input  type="radio" name="gender" value="Female"> Female</div>
+				</div>
+				<br><br>
+				<div class="col-md-12">
+					<div class="col-md-5">
+						<table id="cdate">
+							<tr>
+								<td>
+									<div class="group">
+										<input type="date" name="custname" id="date"  required onKeyUp="cdate()" />
+										<span class="bar"></span>
+										<label id="da1">Date of birth</label>
+										<label id="da2">Please enter Date of birth</label>
+									</div>
+								</td>
+							</tr>			
+						</table>
+					</div>
+				</div>
+				<br><br>
+				<div class="col-md-12" style="border:px solid red;">
+					<div class="col-md-5">
+						<table id="cemail">
+							<tr>
+								<td>
+									<div class="group">
+										<input type="text" name="custname" id="txtcemail" maxlength="10" required  onkeyup="cemail()" />
+										<span class="bar"></span>
+										<label id="fn1">Email or phone number</label>
+										<label id="fn2">Please Enter email or phone number</label>
+									</div>
+								</td>
+							</tr>			
+						</table>
+					</div>
+				</div>
+				<br><br>
+				<div class="col-md-12">
+					<div class="col-md-5">
+						<table id="cpwd">
+							<tr>
+								<td>
+									<div class="group">
+										<input type="password" name="custname" id="txtpwd" maxlength="10" required onKeyUp="cpwd()" />
+										<span class="bar"></span>
+										<label id="vt1">Password</label>
+										<label id="vt2">Please enter password</label>
+									</div>
+								</td>
+							</tr>			
+						</table>
+					</div>
+				</div>
+				<br><br>
+				<div class="col-md-12">
+					<div id="single" class="col-md-1"><input  type="radio" name="status" value="single" required> Single</div>
+					<div id="married" class="col-md-2"><input  type="radio" name="status" value="married"> Married</div>
+				</div>
+				<br><br>
+				<div class="col-md-12" id="createbt" >
+					<a  href="signinmob.html" >
+						<div class="col-md-2 col-md-offset-2">
+              <button id="savecreate" type="submit">CREATE</button>
+            
+            </div>
+            </a>
+					</div>
+				
+			</div>
+		  </div>
+			
+		</form>
