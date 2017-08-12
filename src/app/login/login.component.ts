@@ -41,19 +41,19 @@ export class LoginComponent implements OnInit {
        if (this.loginForm.valid) {
         
         let vm = this;
-       this.router.navigate(['/app/home']);
-        // this.loginService.authenticate(val)
-        //   .subscribe(
-        //       data => {         
-        //           console.log('data'+data)      ;       
-        //           USER_DATA.token=data.token;                               
-        //           this.router.navigate(['/app/home']);
-        //       },
-        //       error => {
-        //             console.log(val.username+ val.password);        
-        //             vm.validationSummaryMsg = "Please enter email or phone number";                    
-        //             vm.router.navigate([`/login`]);
-        //       });
+       //this.router.navigate(['/app/home']);
+        this.loginService.authenticate(val)
+          .subscribe(
+              data => {         
+                  console.log('data'+data);       
+                  USER_DATA.token=data.token;                               
+                  this.router.navigate(['/app/home']);
+              },
+              error => {
+                    //console.log(val.username+ val.password);        
+                    vm.validationSummaryMsg = "Please enter email or phone number";                    
+                    vm.router.navigate([`/login`]);
+              });
        }
     }
     

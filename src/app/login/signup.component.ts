@@ -17,9 +17,20 @@ export class SignupComponent implements OnInit {
   private isPageLoad: boolean = true;
   private loginService: LoginService;
   private signupComplete = false;
+  private isValidated =true;
 
-  constructor(private router: Router,loginService: LoginService) {
+  constructor(private router: Router,loginService: LoginService,private formBuilder: FormBuilder) {
     this.loginService = loginService;
+    this.signupForm = this.formBuilder.group({
+            'fullname':['', [Validators.required]],
+            'surname':['', [Validators.required]],
+            'gender':['', [Validators.required]],
+            'dob':['', [Validators.required]],            
+            'email':['', [Validators.required, ValidationService.emailValidator]],
+            //'phone':['', [Validators.required]],            
+            'maritalstatus':['', [Validators.required]], 
+            'password': ['', [Validators.required, ValidationService.passwordValidator]]
+        });
    }
 
   ngOnInit() {
@@ -28,11 +39,12 @@ export class SignupComponent implements OnInit {
 
   signup(val: any, valid: any) {
     this.isPageLoad=false;    
+    if (this.signupForm.valid) {
+      this.isValidated=true;
     console.log(this.signupForm.value);
     this.loginService.register(this.signupForm.value)
             .subscribe(
-                data => {                   
-                    //this.router.navigate(['/home']);
+                data => {                                      
                     this.signupComplete=true;
                     this.signupForm.reset();
                 },
@@ -40,6 +52,9 @@ export class SignupComponent implements OnInit {
                     //this.alertService.error(error); 
                     this.signupComplete=false;                   
                 });
+    }else{
+      this.isValidated=false;
+    }
   }
 
 }

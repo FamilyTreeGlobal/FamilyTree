@@ -1,3 +1,4 @@
+<form role="form" [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value, signupForm.valid)">
 <div class="container-fluid" id="main">
 		<div class="row">	    
 			<div class="col-sm-4" id="mainrow">
@@ -14,19 +15,34 @@
 		</div>
 	</div>
 	<br>	
-	<form action="signinmob.html">
+	
+	<div class="container" *ngIf="signupComplete == true && !isPageLoad">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-4" >Registration completed successfully.Please login.</div>
+			</div>
+		</div>
+	</div>
+	<div class="container ci2" *ngIf="isValidated == false && !isPageLoad">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-4" >Please fill all fields.</div>
+			</div>
+		</div>
+	</div>
 		<div class="container">
 			<div class="row" >
 				<div class="col-md-12">
 					<div class="col-md-5">
 						<table id="cid">
 							<tr>
-								<td>
-									<div class="group">
-										<input  type="text" name="custname" id="txtfname" maxlength="10"  required onKeyUp="cid()" />
+								<td>	
+								    <div class="group">
+										<input  type="text" class="input-name" name="fullname" formControlName="fullname"  id="txtfname"  maxlength="45"  required />
 										<span class="bar"></span>
 										<label id="ci1">Full name</label>
-										<label id="ci2">Please enter full name</label>
+										<!-- <label id="ci2">Please enter full name</label> -->
+										<control-messages class="ci2" [control]="signupForm.controls.fullname"></control-messages> 
 									</div>
 								</td>
 							</tr>			
@@ -40,10 +56,10 @@
 							<tr>
 								<td>
 									<div class="group">
-										<input type="text" name="custname" id="txtlname" maxlength="10"  required onKeyUp="cname()" />
+										<input  type="text" class="input-name" name="surname" formControlName="surname"  id="txtlname"  maxlength="45"  required />
 										<span class="bar"></span>
-										<label id="cn1">Sur name</label>
-										<label id="cn2">Please enter sur name</label>
+										<label id="ci1">Sur name</label>					
+										<control-messages class="ci2" [control]="signupForm.controls.surname"></control-messages> 
 									</div>
 								</td>
 							</tr>			
@@ -52,8 +68,9 @@
 				</div>
 				<br><br>
 				<div class="col-md-12">
-					<div id="genderupm" class="col-md-1"><input type="radio" name="gender" value="Male" required> Male</div>
-					<div id="genderupf" class="col-md-2"><input  type="radio" name="gender" value="Female"> Female</div>
+					<div id="genderupm" class="col-md-1"><input type="radio" formControlName="gender" name="gender" value="Male" required> Male</div>
+					<div id="genderupf" class="col-md-2"><input  type="radio" formControlName="gender" name="gender" value="Female"> Female</div>
+
 				</div>
 				<br><br>
 				<div class="col-md-12">
@@ -62,10 +79,17 @@
 							<tr>
 								<td>
 									<div class="group">
-										<input type="date" name="custname" id="date"  required onKeyUp="cdate()" />
+										<input type="date" class="ft_input_txt" name="custname" formControlName="dob" id="date"  required  />
 										<span class="bar"></span>
 										<label id="da1">Date of birth</label>
-										<label id="da2">Please enter Date of birth</label>
+										<!-- <label id="da2">Please enter Date of birth</label> -->
+										<control-messages class="ci2" [control]="signupForm.controls.dob"></control-messages> 
+
+										<!-- <input  type="text" class="ft_input_txt" name="surname" formControlName="surname"  id="txtlname"  maxlength="10"  required />
+										<span class="bar"></span>
+										<label id="ci1">Sur name</label>					
+										<control-messages class="ci2" [control]="signupForm.controls.surname"></control-messages>  -->
+
 									</div>
 								</td>
 							</tr>			
@@ -78,12 +102,13 @@
 						<table id="cemail">
 							<tr>
 								<td>
-									<div class="group">
-										<input type="text" name="custname" id="txtcemail" maxlength="10" required  onkeyup="cemail()" />
-										<span class="bar"></span>
-										<label id="fn1">Email or phone number</label>
-										<label id="fn2">Please Enter email or phone number</label>
-									</div>
+								  <div class="group" id="group">
+									<input type="text" class="input-name" name="email" id="txtcemail" formControlName="email"  required />
+									<span class="bar"></span>
+									<label id="ci1">Email or phone number</label>
+									<!-- <label id="fn2">Please Enter email or phone number</label> -->
+									 <control-messages class="ci2" [control]="signupForm.controls.email"></control-messages> 
+								   </div>
 								</td>
 							</tr>			
 						</table>
@@ -96,11 +121,12 @@
 							<tr>
 								<td>
 									<div class="group">
-										<input type="password" name="custname" id="txtpwd" maxlength="10" required onKeyUp="cpwd()" />
-										<span class="bar"></span>
-										<label id="vt1">Password</label>
-										<label id="vt2">Please enter password</label>
-									</div>
+									  <input type="password" class="input-name" name="password" id="txtpwd" formControlName="password" required  />
+									   <span class="bar"></span>
+									   <label id="vt1">Password</label>
+									   <control-messages class="ci2" [control]="signupForm.controls.password"></control-messages>
+								   </div>
+									
 								</td>
 							</tr>			
 						</table>
@@ -108,8 +134,9 @@
 				</div>
 				<br><br>
 				<div class="col-md-12">
-					<div id="single" class="col-md-1"><input  type="radio" name="status" value="single" required> Single</div>
-					<div id="married" class="col-md-2"><input  type="radio" name="status" value="married"> Married</div>
+					<div id="single" class="col-md-1"><input  type="radio" name="maritalstatus" formControlName="maritalstatus" value="single" required> Single</div>
+					<div id="married" class="col-md-2"><input  type="radio" name="maritalstatus" formControlName="maritalstatus" value="married"> Married</div>
+					 <control-messages class="ci2" [control]="signupForm.controls.maritalstatus"></control-messages>
 				</div>
 				<br><br>
 				<div class="col-md-12" id="createbt" >
@@ -124,4 +151,4 @@
 			</div>
 		  </div>
 			
-		</form>
+	</form>

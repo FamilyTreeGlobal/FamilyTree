@@ -32,10 +32,10 @@
 						<tr>
 							<td>
 								<div class="group" id="group">
-									<input type="text" class="input-name" name="username" formControlName="username" [ngClass]="!loginForm.controls['password'].valid? 'required-val':''"  required />
+									<input type="text" class="input-name" name="username" formControlName="username"  required />
 									<span class="bar"></span>
 									<label id="ci1">Email or phone number</label>
-									 <control-messages [control]="loginForm.controls.username"></control-messages> 
+									 <control-messages class="ci2" [control]="loginForm.controls.username"></control-messages> 
 								</div>
 							</td>
 						</tr>			
@@ -49,10 +49,10 @@
 						<tr>
 							<td>
 								<div class="group">
-									<input type="password" class="input-name" name="password" formControlName="password"  [ngClass]="!loginForm.controls['password'].valid? 'required-val':''"  required  />
+									<input type="password" class="input-name" name="password" formControlName="password" required  />
 									<span class="bar"></span>
 									<label id="cn1">Password</label>
-									<control-messages [control]="loginForm.controls.password"></control-messages>
+									<control-messages class="ci2" [control]="loginForm.controls.password"></control-messages>
 								</div>
 							</td>
 						</tr>			
