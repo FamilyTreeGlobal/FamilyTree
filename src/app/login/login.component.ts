@@ -45,13 +45,13 @@ export class LoginComponent implements OnInit {
         this.loginService.authenticate(val)
           .subscribe(
               data => {         
-                  console.log('data'+data);       
+                  //console.log('data'+data);       
                   USER_DATA.token=data.token;                               
                   this.router.navigate(['/app/home']);
               },
               error => {
                     //console.log(val.username+ val.password);        
-                    vm.validationSummaryMsg = "Please enter email or phone number";                    
+                    vm.validationSummaryMsg = "Please enter valid email/phone and password";                    
                     vm.router.navigate([`/login`]);
               });
        }

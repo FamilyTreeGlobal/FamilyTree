@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
   private isPageLoad: boolean = true;
   private loginService: LoginService;
   private signupComplete = false;
+  private userExists=false;
   private isValidated =true;
 
   constructor(private router: Router,loginService: LoginService,private formBuilder: FormBuilder) {
@@ -44,9 +45,18 @@ export class SignupComponent implements OnInit {
     console.log(this.signupForm.value);
     this.loginService.register(this.signupForm.value)
             .subscribe(
-                data => {                                      
-                    this.signupComplete=true;
-                    this.signupForm.reset();
+                data => {      
+                  if(data.result==1)
+                    {
+                      this.userExists=true;
+                      
+                    }else if(data.result==2){
+                      this.signupComplete=true;  
+                      this.signupForm.reset();
+                    }
+                   //console.log('data.result:'+data.result);
+                    //this.signupComplete=true;
+                   // this.signupForm.reset();
                 },
                 error => {
                     //this.alertService.error(error); 

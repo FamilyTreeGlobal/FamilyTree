@@ -23,6 +23,14 @@
 			</div>
 		</div>
 	</div>
+	<div class="container" *ngIf="userExists == true && !isPageLoad">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-4" > The email is not available.Please try another.</div>
+			</div>
+		</div>
+	</div>
+	
 	<div class="container ci2" *ngIf="isValidated == false && !isPageLoad">
 		<div class="row">
 			<div class="col-md-12">
@@ -140,7 +148,7 @@
 				</div>
 				<br><br>
 				<div class="col-md-12" id="createbt" >
-					<a  href="signinmob.html" >
+					<a  href="" >
 						<div class="col-md-2 col-md-offset-2">
               <button id="savecreate" type="submit">CREATE</button>
             
