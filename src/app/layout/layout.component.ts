@@ -35,35 +35,27 @@ export class LayoutComponent implements OnInit {
         vm.tab4 = false;
         vm.tab5 = false;
         vm.tab6 = false;
-        if (index == 0) {
+        if (index == 1) {
             vm.tab1 = true;
             // vm.sharedService.setOption(1);
             vm.router.navigate(['/app/profile']);
         } else
          
-        if (index == 1) {
-            vm.tab2 = true;
-            // vm.sharedService.setOption(2);
+        if (index == 2) {
+            vm.tab2 = true;            
             vm.router.navigate(['/app/home']);
-        } else if (index == 2) {
-            vm.tab3 = true;
-            // vm.sharedService.setOption(3);
-            vm.router.navigate(['/app/chat']);
         } else if (index == 3) {
-            vm.tab4 = true;
-             vm.router.navigate(['/app/invitations']);
-            // vm.sharedService.setOption(4);
-            //vm.router.navigate(['/emergencyservice']);
+            vm.tab3 = true;            
+            vm.router.navigate(['/app/chat']);
         } else if (index == 4) {
+            vm.tab4 = true;
+            vm.router.navigate(['/app/invitations']);            
+        } else if (index == 5) {
             vm.tab5 = true;
-            vm.router.navigate(['/app/invitations']);
-            // vm.sharedService.setOption(5);
-            //vm.router.navigate(['/adminusers']);
-        }
-        else if (index == 5) {
-            vm.tab6 = true;
-            // vm.sharedService.setOption(5);
-            //vm.router.navigate(['/adminusers']);
+            vm.router.navigate(['/app/requests']);            
+        } else if (index == 6) {
+            vm.tab6 = true;            
+            vm.router.navigate(['/app/familynews']);
         }
     }
   
