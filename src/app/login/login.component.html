@@ -20,6 +20,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="col-md-4" *ngIf="!loginForm.controls['username'].valid && !loginForm.controls['password'].valid && !isPageLoad" >Please enter Email/Phone and password.</div>
+				<div class="col-md-4 ci2" *ngIf="!validationSummaryMsg=='' && !isPageLoad" >{{validationSummaryMsg}}</div>				
 			</div>
 		</div>
 	</div>

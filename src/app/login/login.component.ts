@@ -45,9 +45,14 @@ export class LoginComponent implements OnInit {
         this.loginService.authenticate(val)
           .subscribe(
               data => {         
-                  //console.log('data'+data);       
-                  USER_DATA.token=data.token;                               
-                  this.router.navigate(['/app/home']);
+                  console.log('data'+data.status);  
+                  if(data.status!=401){     
+                         USER_DATA.token=data.token;                               
+                        this.router.navigate(['/app/home']);
+                  }else{
+                      vm.validationSummaryMsg = data.msg;                    
+                      vm.router.navigate([`/login`]);
+                  }
               },
               error => {
                     //console.log(val.username+ val.password);        
