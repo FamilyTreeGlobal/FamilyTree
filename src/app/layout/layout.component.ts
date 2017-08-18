@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['../../assets/css/layout.css'],
+  styleUrls: ['./layout.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class LayoutComponent implements OnInit {

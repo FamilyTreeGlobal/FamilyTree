@@ -1,0 +1,18 @@
+#mainrow{
+    text-align: left;
+    border:px solid red;
+    font-weight: normal;
+}
+#signin{
+
+margin-left: -13px;
+font-weight: normal;
+}
+#cn1{
+
+font-weight: normal;
+}
+.input-name{
+
+    color: #000000; font-size:14px;   padding-top:20px;
+}

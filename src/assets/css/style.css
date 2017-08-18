@@ -1,12 +1,28 @@
 body {
 font-family: 'Roboto', sans-serif; font-size:14px;
 }
+#proffshadow{border:px solid red; height: 528px; margin-top:30px;}
+#usernamee{
 
+    margin: 0px 0px -60px -70px;
+}
+#familymenu{
+   margin: 0px 0px 0px -1px;
+    border: px solid  red;
+    text-align:left;
+    width: 200px;
+}
 #mobileview{
 display:none;
 }
 
-
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
 #maindiv{
 border:px solid green; 
 height:612px; 
@@ -16,22 +32,14 @@ margin-left:40px; /*-webkit-box-shadow: -1px 3px 38px -8px rgba(0,0,0,0.75);
 box-shadow: -1px 3px 38px -8px rgba(0,0,0,0.75);*/
 
 }
-.body-background-img {   
-background: url(../../assets/images/treee.jpg) no-repeat center center fixed;   
+/*CSS FOR SIGNIN PAGE START*/
+#signinbody {   
+background: url(../images/treee.jpg) no-repeat center center fixed; 
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
 }
-.body-background-color {   
-    background: #FED770 !important;
-    font-family: "Roboto", sans-serif;
-}
-
-.leftmenu_bar_active {
-    color: #FFFFFF !important;
-}
-
 #signinbody #ci2{
 display:none;
 }
@@ -173,7 +181,13 @@ font-size: 12px;
 
 
 /*CSS FOR SIGNUP PAGE START*/
-
+#signinbody {   
+background: url(../images/treee.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
 
 #mainup{
 margin-top:-6px;
@@ -217,19 +231,19 @@ background-color:transparent;
 margin-top:-20px;    
 border:none;   
 border-bottom:1px solid #000000;
+
 }
 
 #ci1{
 margin-left:-10px;
+border:px solid red;
+font-weight:normal;
 }
 #ci2{
 color:#F16B60; 
 margin-left:-10px;
 }
 
-.ci2{
-color:#F16B60; 
-}
 
 
 
@@ -262,12 +276,12 @@ margin-left:-10px;
 
 #genderupm{
 font-size:14px; 
-font-weight:bold;
+font-weight:normal;
 }
 
 #genderupf{
 font-size:14px;
-font-weight:bold;
+font-weight:normal;
 }
 
 
@@ -384,6 +398,7 @@ font-size:12px;
 font-size:13px; 
 font-weight:bold;
 float:left;
+
 }
 
 #genderupf{
@@ -589,10 +604,10 @@ position: fixed;
 left: 250px;
 width: 500px;
 height: 530px;
-margin-left: -150px;
+margin-left: -145px;
 overflow-y: auto;
 background-color:transparent;
-
+border:px solid red;
 -webkit-transition: all 0.5s ease;
 -moz-transition: all 0.5s ease;
 -o-transition: all 0.5s ease;
@@ -1200,7 +1215,7 @@ height:25px;
 #familymaindiv{
                border:px solid red; height:528px; background-color:#FFFFFF; z-index:1;-webkit-box-shadow: -1px 3px 38px -8px rgba(0,0,0,0.75);
 -moz-box-shadow: -1px 3px 38px -8px rgba(0,0,0,0.75);
-box-shadow: -1px 3px 38px -8px rgba(0,0,0,0.75);
+box-shadow: -1px 3px 38px -8px rgba(0,0,0,0.75);margin-left:40px;
 }
 /*CSS FOR FAMILYMEMBERS END*/
 
@@ -2811,10 +2826,10 @@ emoji.scream{background-image: url(https://i.imgur.com/tOLNJgg.png);}
 emoji.hearth_blue{background-image: url(https://i.imgur.com/gR9juts.png);}
 emoji.funny{background-image: url(https://i.imgur.com/qKia58V.png);}
 
-@-webikt-keyframes pulse {
+/* @-webikt-keyframes pulse {
 from { opacity: 0; }
 to { opacity: 0.5; }
-}
+} */
 
 ::-webkit-scrollbar {
 min-width: 12px;
@@ -2913,11 +2928,8 @@ border:px solid pink;padding:4px;
 
 /*inlut label styling*/
 
-input::-webkit-input-placeholder {color:  #999999 !important;padding:0px;font-size:16px;font-style:; font-family:;  }
+input::-webkit-input-placeholder {color:  #999999 !important;padding:0px;font-size:16px; }
 input[name=custname]{  color: #000000; font-size:14px;   padding-top:20px;}
-.input-name{
-     color: #000000; font-size:14px;   padding-top:20px;
-}
 
 /*Form Design*/
 .group{ 
@@ -3015,7 +3027,7 @@ opacity:0.5;
 input:focus ~ .highlight {
 -webkit-animation:inputHighlighter 0.3s ease;
 -moz-animation:inputHighlighter 0.3s ease;
-animation:inputHighlighter 0.3s ease;.
+animation:inputHighlighter 0.3s ease;
 
 
 }
@@ -3054,5 +3066,5 @@ background:transparent;
 
 
 
-
+}
 

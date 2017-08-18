@@ -1,3 +1,4 @@
+
 import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
 import {  FormGroup, Validators  , FormBuilder, FormControlName  , FormControl} from '@angular/forms';
 import { ValidationService } from '../validation.service';
@@ -8,6 +9,7 @@ import { LoginService  } from '../../_services/index';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css'],
   encapsulation: ViewEncapsulation.None,
   providers:[LoginService]
 })

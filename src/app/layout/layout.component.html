@@ -1,28 +1,62 @@
+<!-- Modal start-->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="logprof" class="modal-title">Are you sure to logout?</h4>
+				</div>
+				<div class="modal-footer" >
+					<button id="btprofok" type="button" onClick="location.href='signin.html';"  data-dismiss="modal">Ok</button>
+					<button id="btprofcancel" type="button"  data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal close-->
+
+
+
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6">   
-            <div class="navbar-header" style=" float: left;">
-                        <a class="navbar-brand" href="#" id="fmlogo">Family Tree</a> 
-                      </div></div>
-                    <div class="col-md-6">  
-                        <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown" id="settlogo">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog">
-                            </span> Settings <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" id="settlogodp">
-                            <li id="settlogodp1"><a href="privacy.html">Privacy</a></li>
-                            <li id="settlogodp1"><a href="general.html">General</a></li>
-                            <li id="settlogodp1"><a href="notifications.html">Notifications</a></li>
-                            <li id="settlogodp1"><a href="groups.html">Create Family Group</a></li>
-                        </ul>
-                    </li>
-                    <li data-target="#myModal" data-toggle="modal" id="logoutt"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                </ul>
-        </div>
-    </div>
+    <nav id="mobhide" class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a id="fmlogo" class="navbar-brand" href="#">Family Tree</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+			<li id="settlogo" class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-edit">
+					</span> Themes <span class="caret"></span>
+				</a>
+				<ul id="settlogodp" class="dropdown-menu">
+				     <li id="settlogodp1"><a href="profile.html">Default theme </a></li>
+					<li id="settlogodp1"><a href="theme1/profiletheme1.html">Theme 1 </a></li>
+					<li id="settlogodp1"><a href="theme2/profiletheme2.html">Theme 2</a></li>
+					<li id="settlogodp1"><a href="theme3/profiletheme3.html">Theme 3</a></li>
+					<li id="settlogodp1"><a href="theme4/profiletheme4.html">Theme 4</a></li>
+				</ul>
+			</li>
+				<li id="settlogo" class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog">
+					</span> Settings <span class="caret"></span>
+				</a>
+				<ul id="settlogodp" class="dropdown-menu">
+					<li id="settlogodp1"><a href="privacy.html">Privacy</a></li>
+					<li id="settlogodp1"><a href="general.html">General</a></li>
+					<li id="settlogodp1"><a href="notifications.html">Notifications</a></li>
+					<li id="settlogodp1"><a href="groups.html">Create Family Group</a></li>
+				</ul>
+			</li>
+			<li id="logoutt" data-toggle="modal" data-target="#myModal"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+		</ul>
+	</div>
+</nav>
     <div>
+        <div id="proffshadow" class="container"><!-- menu -->
+		<div class="row"><!-- menu2 -->
+			<div id="wrapper"><!-- wrapper -->
          <div id="sidebar-wrapper"><!-- Sidebar start -->
 				<ul class="sidebar-nav">
                         <div id="usernamee">
@@ -36,12 +70,12 @@
                         						
                         <li id="familymenu">
                           <a (click)="onTabClicks(1)" ><i aria-hidden="true">
-                            <img src="../assets/images/user.png"> </i>
-                            <span style="color:#000000;" [ngClass]="{ 'leftmenu_bar_active': tab1}" data-toggle="tab" id="menu-toggleprof">My profile</span>  </a>
+                            <img src="../assets/images/userwhite.png"> </i>
+                            <span [ngClass]="{ 'leftmenu_bar_active': tab1}" data-toggle="tab" id="menu-toggleprof">My profile</span>  </a>
                         </li>
                         <li id="familymenu">
                             <a (click)="onTabClicks(2)" > <i aria-hidden="true">
-                                <img src="../assets/images/familymemwhite.png"> </i> 
+                                <img src="../assets/images/familymem.png"> </i> 
                                 <span  [ngClass]="{ 'leftmenu_bar_active': tab2}" data-toggle="tab">&nbsp;&nbsp;&nbsp;My Family Members</span> </a>
                         </li>
                        
@@ -52,7 +86,7 @@
                         </li>
                         <li id="familymenu">
                             <a (click)="onTabClicks(4)"> <i aria-hidden="true">
-                            <img src="../assets/images/invitation.png"> </i> 
+                            <img src="../assets/images/Invitation.png"> </i> 
                             <span id="familymenu1" [ngClass]="{ 'leftmenu_bar_active': tab4}" data-toggle="tab"> Invitations</span> </a>
                         </li>
                         <li id="familymenu">
@@ -62,7 +96,7 @@
                         </li>
                         <li id="familymenu">
                         <a (click)="onTabClicks(6)"><i aria-hidden="true">
-                            <img src="../assets/images/news.png"> </i> 
+                            <img src="../assets/images/News.png"> </i> 
                             <span id="familymenu1" [ngClass]="{ 'leftmenu_bar_active': tab6}" data-toggle="tab"> Family news </span> </a>
                         </li>
                     </ul>
@@ -71,3 +105,6 @@
                    
     <router-outlet></router-outlet>
 </div>
+        </div>
+        </div>
+    </div>

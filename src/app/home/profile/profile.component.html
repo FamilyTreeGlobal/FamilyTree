@@ -1,4 +1,90 @@
-<h1>
-  profile works!
-</h1>
+<div id="maindiv"><!-- maindiv -->
+												<div id="myprofile" class="col-md-5">
+													<form>
+														<table id="mbpf">
+															<tr>
+																<td>
+																	<img src="images/profile.png">
+																</td>
+																<td id="mbpf1">
+																	<input style="margin-left:10px;margin-top:20px;" id="txtem" type="text" placeholder="Write something about status">
+																</td>
+															</tr>
+														</table>
+														<table id="pfname">
+															<tr>
+																<td>
+																	<div class="group">
+																		<input type="text" name="custname" id="txtpfname" maxlength="10" required onKeyUp="pfname()" />
+																		<span class="bar"></span>
+																		<label id="pfname1">Full name</label>
+																		<label id="pfname2">Please enter full name</label>
+																	</div>
+																</td>
+															</tr>			
+														</table>
+														<table id="pcname">
+															<tr>
+																<td>
+																	<div class="group">
+																		<input type="text" name="custname" id="txtplname" maxlength="10" required onKeyUp="pcname()" />
+																		<span class="bar"></span>
+																		<label id="pcname1">Sur name</label>
+																		<label id="pcname2">Please enter sur name</label>
+																	</div>
+																</td>
+															</tr>			
+														</table>
+														<div id="profilem"><input type="radio" name="gender" value="Male" required> Male</div>
+														<div id="profilefm"><input  type="radio" name="gender" value="Female"> Female</div>
 
+														<table id="pcdate">
+															<tr>
+																<td>
+																	<div class="group">
+																		<input type="date" name="custname" id="pdate"  required onKeyUp="pcdate()" />
+																		<span class="bar"></span>
+																		<label id="pcdate1">Date of birth</label>
+																		<label id="pcdate2">Please enter date of birth</label>
+																	</div>
+																</td>
+															</tr>			
+														</table>
+														<div id="profilem"><input  type="radio" name="status" value="single" required> Single</div>
+														<div id="profilefm"><input  type="radio" name="status" value="married"> Married</div>
+														<table id="pcpwd">
+															<tr>
+																<td>
+																	<div class="group">
+																		<input type="number" name="custname" id="txtppwd" maxlength="10" required onKeyUp="pcpwd()" />
+																		<span class="bar"></span>
+																		<label id="pcpwd1">Phone number</label>
+																		<label id="pcpwd2">Please enter phone number</label>
+																	</div>
+																</td>
+															</tr>			
+                            </table>
+                            <div class="col-md-12 text-right">
+															<p id="adddetai">Add more details..</p>
+														</div>
+														<div class="form-group text-right">
+															<button id="profilecancelbt" type="submit" onClick="location.href='profile.html';">
+																<b>Cancel</b></button>
+																<button id="saveprofile" type="submit"><b>Save</b></button>
+															</div>
+                          </form> 
+                        </div>
+                        <div id="chooseprofile" class="col-md-6 col-md-offset-1">
+														<div id="chooseprofile1" class="col-md-3 col-md-offset-3">
+                              <img src="../../../assets/images/profile.png">
+                              <input type="file" #file (change)="onChange(file.files)"/>
+														</div>
+														<div id="placeholder" class="col-md-10 col-md-offset-2">
+															<input id="txtem" type="text" placeholder="Write something about pic or your status">
+														</div>
+														<a id="passwordbt" href="changepassword.html">
+															<div class="col-md-5 col-md-offset-4">
+																<button id="changepasswordbt" type="submit">Change password</button>
+															</div></a>
+														</div>
+													</div><!-- maindiv -->

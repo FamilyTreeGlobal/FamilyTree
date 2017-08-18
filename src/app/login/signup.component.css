@@ -1,0 +1,51 @@
+#mainrow{
+    text-align: left;
+    border:px solid red;
+    font-weight: normal;
+}
+.input-name{
+
+    color: #000000; font-size:14px;   padding-top:20px;
+}
+#signin{
+
+margin-left: -13px;
+font-weight: normal;
+}
+#da1{
+
+    border:px solid red;
+font-weight:normal;
+}
+#vt1{
+
+     border:px solid red;
+font-weight:normal;
+}
+
+#genderupm{
+
+border:px solid red;
+font-weight:normal;
+margin-left:-10px;
+}
+#genderupf{
+
+border:px solid red;
+font-weight:normal;
+margin-left: -23px;
+margin-top: 2px;
+}
+#single{
+
+border:px solid red;
+font-weight:normal;
+margin-left:-8px;
+}
+#married{
+
+border:px solid red;
+font-weight:normal;
+margin-left: -23px;
+margin-top: 2px;
+}
