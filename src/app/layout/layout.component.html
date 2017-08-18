@@ -1,8 +1,26 @@
+<!-- Modal start-->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="logprof" class="modal-title">Are you sure to logout?</h4>
+				</div>
+				<div class="modal-footer" >
+					<button id="btprofok" type="button" onClick="location.href='signin.html';"  data-dismiss="modal">Ok</button>
+					<button id="btprofcancel" type="button"  data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal close-->
 
 
 
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container-fluid">
+    <nav id="mobhide" class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a id="fmlogo" class="navbar-brand" href="#">Family Tree</a>
@@ -34,8 +52,11 @@
 			<li id="logoutt" data-toggle="modal" data-target="#myModal"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 		</ul>
 	</div>
-
+</nav>
     <div>
+        <div id="proffshadow" class="container"><!-- menu -->
+		<div class="row"><!-- menu2 -->
+			<div id="wrapper"><!-- wrapper -->
          <div id="sidebar-wrapper"><!-- Sidebar start -->
 				<ul class="sidebar-nav">
                         <div id="usernamee">
@@ -86,4 +107,6 @@
                    
     <router-outlet></router-outlet>
 </div>
-      
+        </div>
+        </div>
+    </div>

@@ -8,6 +8,7 @@ import { ValidationService } from '../../validation.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
+  styleUrls: ['../../../assets/css/style.css'],
   providers:[UserService]
 
 })
