@@ -13,3 +13,6 @@ body {
     text-align:left;
     width: 200px;
 }
+.leftmenu_bar_active{    
+    color:#FFF !important;
+  }

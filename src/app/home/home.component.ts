@@ -9,7 +9,6 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
         let body = document.getElementsByTagName('body')[0];
         body.classList.remove("body-background-img");
         body.classList.add("body-background-color");
