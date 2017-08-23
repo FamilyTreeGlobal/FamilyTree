@@ -23,6 +23,9 @@ export class LoginService extends BaseService {
   activateAccount(token: string) {
     return this.get('Account/ConfirmEmail?token=' + token);
   }
+  updateUser(user : any){
+    return this.post('users/updateUser', user);
+  }
   
   
 }

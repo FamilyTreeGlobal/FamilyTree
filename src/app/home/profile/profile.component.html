@@ -1,6 +1,7 @@
+<form role="form" [formGroup]="profileForm" (ngSubmit)="profile(profileForm.value, profileForm.valid)">
 <div id="maindiv"><!-- maindiv -->
 												<div id="myprofile" class="col-md-5">
-													<form>
+													
 														<table id="mbpf">
 															<tr>
 																<td>
@@ -72,7 +73,7 @@
 																<b>Cancel</b></button>
 																<button id="saveprofile" type="submit"><b>Save</b></button>
 															</div>
-                          </form> 
+                           
                         </div>
                         <div id="chooseprofile" class="col-md-6 col-md-offset-1">
 														<div id="chooseprofile1" class="col-md-3 col-md-offset-3">
@@ -88,3 +89,4 @@
 															</div></a>
 														</div>
 													</div><!-- maindiv -->
+													</form>
