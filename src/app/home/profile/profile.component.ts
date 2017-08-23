@@ -36,6 +36,7 @@ export class ProfileComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.userService.getUserByID(this.profileForm.value);
   }
   public cancel(e: any) {
         let vm = this;      
