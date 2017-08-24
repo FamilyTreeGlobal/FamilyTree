@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 import { AppModule } from '../../app.module';
 import { UserService , LoginService  } from '../../../_services/index';
 import {  FormGroup, Validators  , FormBuilder, FormControlName  , FormControl} from '@angular/forms';
 import { ValidationService } from '../../validation.service';
+import { ForgotpasswordComponent } from '../.././login/forgotpassword.component';
+import { ControlMessages } from '../.././login/controlMessages';//'F:\FamilyTree\FamilyTree\src\app\login\controlMessages.ts'
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['../../../assets/css/style.css'],
+  styles: [`../../login/signup.component.css , ../../../assets/css/style.css`],
+  encapsulation: ViewEncapsulation.None,
   providers:[UserService , LoginService]
 
 })
@@ -28,10 +31,10 @@ export class ProfileComponent implements OnInit {
             'surname' :['', [Validators.required]],
             'gender'  :['', [Validators.required]],
             'dob'     :['', [Validators.required]],            
-            'email'   :['', [Validators.required, ValidationService.emailValidator]],
-            //'phone':['', [Validators.required]],            
+           // 'email'   :['', [Validators.required, ValidationService.emailValidator]],
+            'phone':['', [Validators.required]],            
             'maritalstatus':['', [Validators.required]], 
-            'password': ['', [Validators.required, ValidationService.passwordValidator]]
+            //'password': ['', [Validators.required, ValidationService.passwordValidator]]
         });
    }
 
@@ -55,7 +58,7 @@ export class ProfileComponent implements OnInit {
                 data => {      
                   if(data.result==1)
                     {
-                      this.userupdated=true;
+                     this.profileUpdateComplete = true;
                       
                     }else if(data.result==2){
                       this.profileUpdateComplete = true;

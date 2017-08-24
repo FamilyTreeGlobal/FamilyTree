@@ -1,92 +1,143 @@
 <form role="form" [formGroup]="profileForm" (ngSubmit)="profile(profileForm.value, profileForm.valid)">
-<div id="maindiv"><!-- maindiv -->
-												<div id="myprofile" class="col-md-5">
-													
-														<table id="mbpf">
-															<tr>
-																<td>
-																	<img src="images/profile.png">
-																</td>
-																<td id="mbpf1">
-																	<input style="margin-left:10px;margin-top:20px;" id="txtem" type="text" placeholder="Write something about status">
-																</td>
-															</tr>
-														</table>
-														<table id="pfname">
-															<tr>
-																<td>
-																	<div class="group">
-																		<input type="text" name="custname" id="txtpfname" maxlength="10" required onKeyUp="pfname()" />
-																		<span class="bar"></span>
-																		<label id="pfname1">Full name</label>
-																		<label id="pfname2">Please enter full name</label>
-																	</div>
-																</td>
-															</tr>			
-														</table>
-														<table id="pcname">
-															<tr>
-																<td>
-																	<div class="group">
-																		<input type="text" name="custname" id="txtplname" maxlength="10" required onKeyUp="pcname()" />
-																		<span class="bar"></span>
-																		<label id="pcname1">Sur name</label>
-																		<label id="pcname2">Please enter sur name</label>
-																	</div>
-																</td>
-															</tr>			
-														</table>
-														<div id="profilem"><input type="radio" name="gender" value="Male" required> Male</div>
-														<div id="profilefm"><input  type="radio" name="gender" value="Female"> Female</div>
+<div id="maindiv">
+   <!-- maindiv -->
+   <div id="myprofile" class="col-md-5">
+      <table id="mbpf">
+         <tr>
+            <td>
+               <img src="images/profile.png">
+            </td>
+            <td id="mbpf1">
+               <input style="margin-left:10px;margin-top:20px;" id="txtem" type="text" placeholder="Write something about status">
+            </td>
+         </tr>
+	  </table>
+		<!--</div>-->
+     
+<br>	
+<div class="container" *ngIf="profileUpdateComplete == true && !isPageLoad">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="col-md-4" >Profile updated successfully.</div>
+      </div>
+   </div>
+</div>
 
-														<table id="pcdate">
-															<tr>
-																<td>
-																	<div class="group">
-																		<input type="date" name="custname" id="pdate"  required onKeyUp="pcdate()" />
-																		<span class="bar"></span>
-																		<label id="pcdate1">Date of birth</label>
-																		<label id="pcdate2">Please enter date of birth</label>
-																	</div>
-																</td>
-															</tr>			
-														</table>
-														<div id="profilem"><input  type="radio" name="status" value="single" required> Single</div>
-														<div id="profilefm"><input  type="radio" name="status" value="married"> Married</div>
-														<table id="pcpwd">
-															<tr>
-																<td>
-																	<div class="group">
-																		<input type="number" name="custname" id="txtppwd" maxlength="10" required onKeyUp="pcpwd()" />
-																		<span class="bar"></span>
-																		<label id="pcpwd1">Phone number</label>
-																		<label id="pcpwd2">Please enter phone number</label>
-																	</div>
-																</td>
-															</tr>			
-                            </table>
-                            <div class="col-md-12 text-right">
-															<p id="adddetai">Add more details..</p>
-														</div>
-														<div class="form-group text-right">
-															<button id="profilecancelbt" type="submit" onClick="location.href='profile.html';">
-																<b>Cancel</b></button>
-																<button id="saveprofile" type="submit"><b>Save</b></button>
-															</div>
-                           
-                        </div>
-                        <div id="chooseprofile" class="col-md-6 col-md-offset-1">
-														<div id="chooseprofile1" class="col-md-3 col-md-offset-3">
-                              <img src="../../../assets/images/profile.png">
-                              <input type="file" #file (change)="onChange(file.files)"/>
-														</div>
-														<div id="placeholder" class="col-md-10 col-md-offset-2">
-															<input id="txtem" type="text" placeholder="Write something about pic or your status">
-														</div>
-														<a id="passwordbt" href="changepassword.html">
-															<div class="col-md-5 col-md-offset-4">
-																<button id="changepasswordbt" type="submit">Change password</button>
-															</div></a>
-														</div>
-													</div><!-- maindiv -->
-													</form>
+<div class="container ci2" *ngIf="isValidated == false && !isPageLoad">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="col-md-4" >Please fill all fields.</div>
+      </div>
+   </div>
+</div>
+<div class="container">
+   <div class="row" >
+      <div class="col-md-12">
+         <div class="col-md-5">
+            <table id="cid">
+               <tr>
+                  <td>
+                     <div class="group">
+                        <input  type="text" class="input-name" name="fullname" formControlName="fullname"  id="txtfname"  maxlength="45"  required />
+                        <span class="bar"></span>
+                        <label id="ci1">Full name</label>
+                        <!-- <label id="ci2">Please enter full name</label> -->
+                       <!-- <control-messages class="ci2" [control]="profileForm.controls.fullname"></control-messages> -->
+                     </div>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="col-md-12">
+         <div class="col-md-5">
+            <table id="cname">
+               <tr>
+                  <td>
+                     <div class="group">
+                        <input  type="text" class="input-name" name="surname" formControlName="surname"  id="txtlname"  maxlength="45"  required />
+                        <span class="bar"></span>
+                        <label id="ci1">Sur name</label>					
+                       <!-- <control-messages class="ci2" [control]="profileForm.controls.surname"></control-messages> -->
+                     </div>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="col-md-12">
+         <div id="genderupm" class="col-md-1"><input type="radio" formControlName="gender" name="gender" value="Male" required> Male</div>
+         <div id="genderupf" class="col-md-2"><input  type="radio" formControlName="gender" name="gender" value="Female"> Female</div>
+      </div>
+      <br><br>
+      <div class="col-md-12">
+         <div class="col-md-5">
+            <table id="cdate">
+               <tr>
+                  <td>
+                     <div class="group">
+                        <input type="date" class="ft_input_txt" name="dob" formControlName="dob" id="date"  required  />
+                        <span class="bar"></span>
+                        <label id="da1">Date of birth</label>
+                       <!-- <control-messages class="ci2" [control]="profileForm.controls.dob"></control-messages>-->
+                     </div>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      
+      <div class="col-md-12">
+         <div id="single" class="col-md-1"><input  type="radio" name="maritalstatus" formControlName="maritalstatus" value="single" required> Single</div>
+         <div id="married" class="col-md-2"><input  type="radio" name="maritalstatus" formControlName="maritalstatus" value="married"> Married</div>
+       <!--  <control-messages class="ci2" [control]="profileForm.controls.maritalstatus"></control-messages> -->
+      </div>
+      <br><br>
+<div class="col-md-12">
+         <div class="col-md-5">
+            <table id="cname">
+               <tr>
+                  <td>
+                     <div class="group">
+                        <input  type="text" class="input-name" name="phone" formControlName="phone"  id="txtfname"  maxlength="15"  required />
+                        <span class="bar"></span>
+                        <label id="ci1">Phone number</label>					
+                       <!-- <control-messages class="ci2" [control]="profileForm.controls.phone"></control-messages> -->
+                     </div>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+<br><br><br><br>
+      <div class="col-md-12" id="btndiv" >
+         <a  href="" >
+            <div class="col-md-2 col-md-offset-2">
+               <button id="cancelbtn" type="submit">Cancel</button>
+		<button id="savebtn" type="submit">Save</button>
+            </div>
+         </a>
+      </div>
+   </div>
+</div>
+</div>
+   <div id="chooseprofile" class="col-md-6 col-md-offset-1">
+      <div id="chooseprofile1" class="col-md-3 col-md-offset-3">
+         <img src="../../../assets/images/profile.png">
+         <input type="file" #file (change)="onChange(file.files)"/>
+      </div>
+      <div id="placeholder" class="col-md-10 col-md-offset-2">
+         <input id="txtem" type="text" placeholder="Write something about pic or your status">
+      </div>
+      <a id="passwordbt" href="changepassword.html">
+         <div class="col-md-5 col-md-offset-4">
+            <button id="changepasswordbt" type="submit">Change password</button>
+         </div>
+      </a>
+   </div>
+</div>
+<!-- maindiv -->
+</form>
