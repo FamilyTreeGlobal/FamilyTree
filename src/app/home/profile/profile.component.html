@@ -116,8 +116,8 @@
       <div class="col-md-12" id="btndiv" >
          <a  href="" >
             <div class="col-md-2 col-md-offset-2">
-               <button id="cancelbtn" type="submit">Cancel</button>
-		<button id="savebtn" type="submit">Save</button>
+               <button id="cancelbtn" type="submit" (click)="cancel();">Cancel</button>
+		<button id="savebtn" type="submit" (click)="save()" >Save</button>
             </div>
          </a>
       </div>
@@ -134,7 +134,7 @@
       </div>
       <a id="passwordbt" href="changepassword.html">
          <div class="col-md-5 col-md-offset-4">
-            <button id="changepasswordbt" type="submit">Change password</button>
+            <button id="changepasswordbt" (click)="forgotPassword()" type="submit">Change password</button>
          </div>
       </a>
    </div>

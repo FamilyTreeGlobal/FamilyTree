@@ -41,15 +41,15 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserByID(this.profileForm.value);
   }
-  public cancel(e: any) {
+  cancel(e: any) {
         let vm = this;      
         vm.router.navigate(['/home']);  
     }
-    public forgotPassword(e: any) {
+     forgotPassword(e: any) {
         let vm = this;        
         vm.router.navigate(['/forgotPassword']);  
     }
-      profile(val: any, valid: any){
+      save(val: any, valid: any){
          this.isPageLoad=false;    
     if (this.profileForm.valid) {
       this.isValidated=true;
