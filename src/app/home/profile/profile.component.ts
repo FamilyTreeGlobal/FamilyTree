@@ -24,6 +24,7 @@ export class ProfileComponent implements OnInit {
   private isPageLoad: boolean = true;
   private profileUpdateComplete = false;
   private loginService: LoginService;
+  private fullname='';
 
   constructor(private router: Router , userService: UserService ,loginService: LoginService ,private formBuilder: FormBuilder) {
     this.userService = userService;
@@ -42,41 +43,63 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     var token=USER_DATA.token;
     console.log('token:'+token);
-    var test = this.userService.getUserDetailsByProfileId();
-    console.log('test:'+test);
+    let vm = this;
+    this.userService.getUserDetailsByProfileId()
+    .subscribe(
+        data => {         
+            console.log('data'+data.status);  
+            if(data.status!=401){     
+              console.log(data.result);
+              let user=JSON.parse(data.result);
+              //console.log(user.fullname);
+              vm.fullname=user.fullname;
+                  //this.router.navigate(['/app/home']);
+            }else{
+                //vm.validationSummaryMsg = data.msg;                    
+                //vm.router.navigate([`/login`]);
+            }
+        },
+        error => {
+              //console.log(val.username+ val.password);        
+              //vm.validationSummaryMsg = "Please enter valid email/phone and password";                    
+              vm.router.navigate([`/login`]);
+        });
+     
   }
   cancel(e: any) {
         let vm = this;      
         vm.router.navigate(['/home']);  
     }
-     forgotPassword(e: any) {
+    
+    forgotPassword(e: any) {
         let vm = this;        
         vm.router.navigate(['/forgotPassword']);  
     }
-      save(val: any, valid: any){
+  
+    save(val: any, valid: any){
          this.isPageLoad=false;    
-    if (this.profileForm.valid) {
-      this.isValidated=true;
-        this.loginService.updateUser(this.profileForm.value)
-            .subscribe(
-                data => {      
-                  if(data.result==1)
-                    {
-                     this.profileUpdateComplete = true;
-                      
-                    }else if(data.result==2){
-                      this.profileUpdateComplete = true;
-                      this.profileForm.reset();
-                    }
-                   
-                },
-                error => {
-                    this.profileUpdateComplete=false;                   
-                });
-    }else{
-      this.isValidated=false;
-    }
-  }
-
+        if (this.profileForm.valid) {
+                this.isValidated=true;
+                this.loginService.updateUser(this.profileForm.value)
+                  .subscribe(
+                      data => {      
+                        if(data.result==1)
+                          {
+                          this.profileUpdateComplete = true;
+                            
+                          }else if(data.result==2){
+                            this.profileUpdateComplete = true;
+                            this.profileForm.reset();
+                          }
+                        
+                      },
+                      error => {
+                          this.profileUpdateComplete=false;                   
+                      });
+        }else{
+          this.isValidated=false;
+        }
       }
+
+    }
 
