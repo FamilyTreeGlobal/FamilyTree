@@ -20,7 +20,8 @@ export class BaseService {
 	}
 	protected get(url: string, isNoLoadingPanel?: boolean): any {
 		var headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-        headers.set('authentication', 'Bearer ' + USER_DATA.token);
+		headers.set('authentication', 'Bearer ' + USER_DATA.token);
+		console.log('USER_DATA.token'+USER_DATA.token);
 		return this.http.get(this.baseURL + url, { search: '', headers: headers })
 			.map(res => {
 				this.hideLoadingPanel();

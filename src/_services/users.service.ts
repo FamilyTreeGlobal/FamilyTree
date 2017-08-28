@@ -16,8 +16,9 @@ export class UserService extends BaseService {
   getUsersList() {
     return this.get('users/getUsersList');
   }
-   getUserByID(user: any) {        
-    return this.post('users/getUserByID', user);
+  getUserDetailsByProfileId() {    
+    console.log('inside')    ;
+    return this.get('users/getUserDetailsByProfileId');
   }
   
   

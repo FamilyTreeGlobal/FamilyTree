@@ -6,6 +6,7 @@ import {  FormGroup, Validators  , FormBuilder, FormControlName  , FormControl} 
 import { ValidationService } from '../../validation.service';
 import { ForgotpasswordComponent } from '../.././login/forgotpassword.component';
 import { ControlMessages } from '../.././login/controlMessages';//'F:\FamilyTree\FamilyTree\src\app\login\controlMessages.ts'
+import { USER_DATA } from '../../common/user';
 
 @Component({
   selector: 'app-profile',
@@ -39,7 +40,10 @@ export class ProfileComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.userService.getUserByID(this.profileForm.value);
+    var token=USER_DATA.token;
+    console.log('token:'+token);
+    var test = this.userService.getUserDetailsByProfileId();
+    console.log('test:'+test);
   }
   cancel(e: any) {
         let vm = this;      
