@@ -1,4 +1,4 @@
-<form role="form" [formGroup]="profileForm" (ngSubmit)="profile(profileForm.value, profileForm.valid)">
+<form role="form" [formGroup]="profileForm" (ngSubmit)="onProfile(profileForm.value, profileForm.valid)">
 <div id="maindiv">
    <!-- maindiv -->
    <div id="myprofile" class="col-md-5">
@@ -41,15 +41,16 @@
                         <input  type="text" class="input-name" name="fullname" formControlName="fullname"  id="txtfname"  maxlength="45"  required />
                         <span class="bar"></span>
                         <label id="ci1">Full name</label>
-                        <!-- <label id="ci2">Please enter full name</label> -->
-                       <!-- <control-messages class="ci2" [control]="profileForm.controls.fullname"></control-messages> -->
                      </div>
                   </td>
                </tr>
             </table>
          </div>
       </div>
+   </div>
+ 
       <br><br>
+      <div class="row">
       <div class="col-md-12">
          <div class="col-md-5">
             <table id="cname">
@@ -58,20 +59,23 @@
                      <div class="group">
                         <input  type="text" class="input-name" name="surname" formControlName="surname"  id="txtlname"  maxlength="45"  required />
                         <span class="bar"></span>
-                        <label id="ci1">Sur name</label>					
-                       <!-- <control-messages class="ci2" [control]="profileForm.controls.surname"></control-messages> -->
+                        <label id="ci1">Sur name</label>
                      </div>
                   </td>
                </tr>
             </table>
          </div>
       </div>
+        </div>
       <br><br>
+      <div class="row">
       <div class="col-md-12">
          <div id="genderupm" class="col-md-1"><input type="radio" formControlName="gender" name="gender" value="Male" required> Male</div>
          <div id="genderupf" class="col-md-2"><input  type="radio" formControlName="gender" name="gender" value="Female"> Female</div>
       </div>
+      </div>
       <br><br>
+      <div>
       <div class="col-md-12">
          <div class="col-md-5">
             <table id="cdate">
@@ -80,22 +84,23 @@
                      <div class="group">
                         <input type="date" class="ft_input_txt" name="dob" formControlName="dob" id="date"  required  />
                         <span class="bar"></span>
-                        <label id="da1">Date of birth</label>
-                       <!-- <control-messages class="ci2" [control]="profileForm.controls.dob"></control-messages>-->
+                        <label id="da1">Date of birth</label>                       
                      </div>
                   </td>
                </tr>
             </table>
          </div>
       </div>
+      </div>
       <br><br>
-      
+      <div  class="row">
       <div class="col-md-12">
          <div id="single" class="col-md-1"><input  type="radio" name="maritalstatus" formControlName="maritalstatus" value="single" required> Single</div>
          <div id="married" class="col-md-2"><input  type="radio" name="maritalstatus" formControlName="maritalstatus" value="married"> Married</div>
-       <!--  <control-messages class="ci2" [control]="profileForm.controls.maritalstatus"></control-messages> -->
+      </div>
       </div>
       <br><br>
+      <div class="row">
 <div class="col-md-12">
          <div class="col-md-5">
             <table id="cname">
@@ -105,14 +110,15 @@
                         <input  type="text" class="input-name" name="phone" formControlName="phone"  id="txtfname"  maxlength="15"  required />
                         <span class="bar"></span>
                         <label id="ci1">Phone number</label>					
-                       <!-- <control-messages class="ci2" [control]="profileForm.controls.phone"></control-messages> -->
                      </div>
                   </td>
                </tr>
             </table>
          </div>
       </div>
+      </div>
 <br><br><br><br>
+<div class="row">
       <div class="col-md-12" id="btndiv" >
          <a  href="" >
             <div class="col-md-2 col-md-offset-2">

@@ -24,6 +24,7 @@ export class LoginService extends BaseService {
     return this.get('Account/ConfirmEmail?token=' + token);
   }
   updateUser(user : any){
+    console.log('update profile');
     return this.post('users/updateUser', user);
   }
   

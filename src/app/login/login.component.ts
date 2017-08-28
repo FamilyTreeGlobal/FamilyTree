@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
   
    
     private onLogin(val: any, valid: any) {
+        console.log('on login page...');
         this.isPageLoad = false;
        if (this.loginForm.valid) {
         
@@ -48,7 +49,7 @@ export class LoginComponent implements OnInit {
                   console.log('data'+data.status);  
                   if(data.status!=401){     
                          USER_DATA.token=data.token;       
-                         console.log(USER_DATA.token)                        ;
+                         console.log('data token :'+USER_DATA.token)                        ;
                         this.router.navigate(['/app/home']);
                   }else{
                       vm.validationSummaryMsg = data.msg;                    
