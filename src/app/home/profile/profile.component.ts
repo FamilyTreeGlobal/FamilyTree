@@ -41,6 +41,7 @@ export class ProfileComponent implements OnInit {
    }
 
   ngOnInit() {
+    console.log('initializing the profile page');
     var token=USER_DATA.token;
     console.log('token:'+token);
     let vm = this;
@@ -66,6 +67,34 @@ export class ProfileComponent implements OnInit {
         });
      
   }
+
+private onProfile(val: any, valid: any) {
+        console.log('on Profile save click page...');
+        this.isPageLoad = false;
+       if (this.profileForm.valid) {
+        
+        let vm = this;
+        this.loginService.authenticate(val)
+          .subscribe(
+              data => {         
+                  console.log('data'+data.status);  
+                  if(data.status!=401){     
+                         USER_DATA.token=data.token;       
+                         console.log('data token :'+USER_DATA.token);
+                          this.loginService.updateUser(this.profileForm.value);                       ;
+                        this.router.navigate(['/app/home']);
+                  }else{
+                                
+                      vm.router.navigate([`/profile`]);
+                  }
+              },
+              error => {                
+                    vm.router.navigate([`/profile`]);
+              });
+       }
+    }
+
+
   cancel(e: any) {
         let vm = this;      
         vm.router.navigate(['/home']);  
