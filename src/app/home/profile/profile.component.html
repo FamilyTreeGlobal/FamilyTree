@@ -57,7 +57,7 @@
                <tr>
                   <td>
                      <div class="group">
-                        <input  type="text" class="input-name" name="surname" formControlName="surname"  id="txtlname"  maxlength="45"  required />
+                        <input  type="text" class="input-name" name="surname" formControlName="surname" value="{{surname}}"  id="txtlname"  maxlength="45"  required />
                         <span class="bar"></span>
                         <label id="ci1">Sur name</label>
                      </div>
@@ -70,8 +70,12 @@
       <br><br>
       <div class="row">
       <div class="col-md-12">
-         <div id="genderupm" class="col-md-1"><input type="radio" formControlName="gender" name="gender" value="Male" required> Male</div>
-         <div id="genderupf" class="col-md-2"><input  type="radio" formControlName="gender" name="gender" value="Female"> Female</div>
+         <div id="genderupm" class="col-md-1">
+               <input type="radio" formControlName="gender" name="gender" value="Male"   value="{{gender}}" required> Male
+            </div>
+         <div id="genderupf" class="col-md-2">
+               <input  type="radio" formControlName="gender" name="gender" value="Female"  value="{{gender}}" required> Female
+            </div>
       </div>
       </div>
       <br><br>
@@ -82,7 +86,7 @@
                <tr>
                   <td>
                      <div class="group">
-                        <input type="date" class="ft_input_txt" name="dob" formControlName="dob" id="date"  required  />
+                        <input type="text" class="ft_input_txt" name="dob" value="{{dob |date:'shortDate'}}" formControlName="dob" id="date"  required  />
                         <span class="bar"></span>
                         <label id="da1">Date of birth</label>                       
                      </div>
@@ -95,8 +99,12 @@
       <br><br>
       <div  class="row">
       <div class="col-md-12">
-         <div id="single" class="col-md-1"><input  type="radio" name="maritalstatus" formControlName="maritalstatus" value="single" required> Single</div>
-         <div id="married" class="col-md-2"><input  type="radio" name="maritalstatus" formControlName="maritalstatus" value="married"> Married</div>
+         <div id="single" class="col-md-1">
+               <input  type="radio"  name="maritalstatus"  formControlName="maritalstatus" value="{{maritalstatus.value}}"  required> Single
+            </div>
+         <div id="married" class="col-md-2">
+               <input  type="radio" name="maritalstatus"  formControlName="maritalstatus" value="{{maritalstatus.value}}" required> Married
+            </div>
       </div>
       </div>
       <br><br>
@@ -107,7 +115,7 @@
                <tr>
                   <td>
                      <div class="group">
-                        <input  type="text" class="input-name" name="phone" formControlName="phone"  id="txtfname"  maxlength="15"  required />
+                        <input  type="text" class="input-name" name="phone" value="{{phone}}" formControlName="phone"  id="txtfname"  maxlength="15"  required />
                         <span class="bar"></span>
                         <label id="ci1">Phone number</label>					
                      </div>
