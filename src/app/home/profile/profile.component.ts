@@ -32,8 +32,7 @@ export class ProfileComponent implements OnInit {
   private gender ='';
   private maritalstatus ='';
   private phone = '';
-//  private isMale = false;
-//   private isFemale =false;
+  
 
   constructor(private router: Router , userService: UserService ,loginService: LoginService ,private formBuilder: FormBuilder ) {
     this.userService = userService;
@@ -42,10 +41,10 @@ export class ProfileComponent implements OnInit {
             'surname' :['', [Validators.required]],
             'gender'  :['', [Validators.required]],
             'dob'     :['', [Validators.required]],            
-           // 'email'   :['', [Validators.required, ValidationService.emailValidator]],
+            // 'email'   :['', [Validators.required, ValidationService.emailValidator]],
             'phone':['', [Validators.required]],            
-            'maritalstatus':['', [Validators.required]], 
-            //'password': ['', [Validators.required, ValidationService.passwordValidator]]
+            'maritalstatus':['', [Validators.required]]
+            
         });
    }
 
@@ -57,31 +56,20 @@ export class ProfileComponent implements OnInit {
     this.userService.getUserDetailsByProfileId()
     .subscribe(
         data => {         
-            console.log('data'+data.status);  
+            
             if(data.status!=401){     
-              console.log(data.result);
               let user=JSON.parse(data.result);
               vm.fullname      =user.fullname;
               vm.surname       =user.surname;
-              vm.gender = user.gender ;
-              console.log('gender is' +user.gender);
-              console.log(this.profileForm.get('gender').value);
-            //   var gender =vm.gender=user.gender;
-            //   if (user.gender = 0)
-            //      user.isMale = true;
-            //   else
-            //     user.isFemale= true;
+              vm.gender        = user.gender ;              
               vm.dob           =user.dob;
               vm.maritalstatus =user.maritalstatus;
-              console.log(user.maritalstatus);
               vm.phone         =user.phone;
             }else{
-                //vm.validationSummaryMsg = data.msg;                    
-                //vm.router.navigate([`/login`]);
+                //vm.validationSummaryMsg = data.msg;                                    
             }
         },
-        error => {
-                                 
+        error => {                                 
               vm.router.navigate([`/login`]);
         });
      

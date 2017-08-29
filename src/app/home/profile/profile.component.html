@@ -71,10 +71,10 @@
       <div class="row">
       <div class="col-md-12">
          <div id="genderupm" class="col-md-1">
-               <input type="radio" formControlName="gender" name="gender" value="Male"   value="{{gender}}" required> Male
+               <input type="radio" formControlName="gender" name="gender" value="Male" [checked]="gender == 0"  required> Male
             </div>
          <div id="genderupf" class="col-md-2">
-               <input  type="radio" formControlName="gender" name="gender" value="Female"  value="{{gender}}" required> Female
+               <input  type="radio" formControlName="gender" name="gender" value="Female" [checked]="gender == 1" required> Female
             </div>
       </div>
       </div>
@@ -100,10 +100,10 @@
       <div  class="row">
       <div class="col-md-12">
          <div id="single" class="col-md-1">
-               <input  type="radio"  name="maritalstatus"  formControlName="maritalstatus" value="{{maritalstatus.value}}"  required> Single
+               <input  type="radio"  name="maritalstatus" value="single" [checked]="maritalstatus=='single'" formControlName="maritalstatus"   required> Single
             </div>
          <div id="married" class="col-md-2">
-               <input  type="radio" name="maritalstatus"  formControlName="maritalstatus" value="{{maritalstatus.value}}" required> Married
+               <input  type="radio" name="maritalstatus"  value="married" [checked]="maritalstatus=='married'" formControlName="maritalstatus"  required> Married
             </div>
       </div>
       </div>
