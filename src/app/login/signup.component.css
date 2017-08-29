@@ -7,6 +7,13 @@
 
     color: #000000; font-size:14px;   padding-top:20px;
 }
+#date{
+    color: #000000; font-size:14px;   padding-top:20px;
+}
+#cdate{
+    margin-left: -13px;
+font-weight: normal;
+}
 #signin{
 
 margin-left: -13px;

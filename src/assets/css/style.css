@@ -975,12 +975,14 @@ background:transparent;
 border:1px solid black; 
 font-size:14px;
 padding:3px 10px 3px 10px;
+color: black;
 }
 #saveprofile{
 background:transparent; 
 border:1px solid black;
 font-size:14px; 
 padding:3px 17px 3px 17px;
+color: black;
 }
 
 
@@ -2132,7 +2134,7 @@ border:px solid red;margin-top:1px;margin-left:40px; background-color:#FFFFFF;
 border:px solid red;margin-top:-16px;margin-left:-60px; height:600px; background-color:#FFFFFF; display:none;
 }
 #profilecancelbt{
-margin-bottom:16px;
+margin-bottom:16px; 
 }
 
 /*chat page css start*/

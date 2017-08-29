@@ -12,7 +12,7 @@ import { USER_DATA } from '../../common/user';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styles: [`../../login/signup.component.css , ../../../assets/css/style.css`],
+  styleUrls: [`../../login/signup.component.css`],
   encapsulation: ViewEncapsulation.None,
   providers:[UserService , LoginService ]
 
