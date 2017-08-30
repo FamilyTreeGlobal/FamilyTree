@@ -20,6 +20,10 @@ export class UserService extends BaseService {
     console.log('inside')    ;
     return this.get('users/getUserDetailsByProfileId');
   }
+    updateProfileUser(user : any){
+    console.log('update profile');
+    return this.post('users/updateUser', user);
+  }
   
   
   

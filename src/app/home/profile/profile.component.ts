@@ -5,7 +5,7 @@ import { UserService , LoginService  } from '../../../_services/index';
 import {  FormGroup, Validators  , FormBuilder, FormControlName  , FormControl} from '@angular/forms';
 import { ValidationService } from '../../validation.service';
 import { ForgotpasswordComponent } from '../.././login/forgotpassword.component';
-import { ControlMessages } from '../.././login/controlMessages';//'F:\FamilyTree\FamilyTree\src\app\login\controlMessages.ts'
+import { ControlMessages } from '../.././login/controlMessages';
 import { USER_DATA } from '../../common/user';
 
 
@@ -86,10 +86,12 @@ export class ProfileComponent implements OnInit {
     }
   
     save(val: any, valid: any){
-         this.isPageLoad=false;    
+      console.log('entered into a save click event');
+         //this.isPageLoad=false;    
         if (this.profileForm.valid) {
-                this.isValidated=true;
-                this.loginService.updateUser(this.profileForm.value)
+               // this.isValidated=true;
+                console.log('user service');
+                this.userService.updateProfileUser(this.profileForm.value)
                   .subscribe(
                       data => {      
                         if(data.result==1)
