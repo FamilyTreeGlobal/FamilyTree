@@ -1,4 +1,4 @@
-<form role="form" [formGroup]="profileForm" >
+<form role="form" [formGroup]="profileForm" (ngSubmit)="save(profileForm.value, profileForm.valid)" >
 <div id="maindiv">
    <!-- maindiv -->
    <div id="myprofile" class="col-md-5">
@@ -131,7 +131,7 @@
          <a  href="" >
             <div class="col-md-2 col-md-offset-2">
                <button id="profilecancelbt" type="submit" (click)="cancel();">Cancel</button>
-		<button id="saveprofile" type="submit" (click)="save()" >Save</button>
+		<button id="saveprofile" type="submit" >Save</button>
             </div>
          </a>
       </div>
