@@ -93,8 +93,8 @@ export class ProfileComponent implements OnInit {
                 this.isValidated=true;
                 console.log('user service');
                 var token=USER_DATA.token;
-                var val1 = val+token;
-                this.userService.updateProfileUser(val)
+                console.log('token'+token);
+                this.userService.updateProfileUser(val,token)
                   .subscribe(
                       data => {      
                         if(data.result==1)
