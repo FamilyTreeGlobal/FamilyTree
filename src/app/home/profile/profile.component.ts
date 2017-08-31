@@ -87,11 +87,14 @@ export class ProfileComponent implements OnInit {
   
     save(val: any, valid: any){
       console.log('entered into a save click event');
-         //this.isPageLoad=false;    
-        if (this.profileForm.valid) {
-               // this.isValidated=true;
+         this.isPageLoad=false;    
+         console.log('form valid staus'+this.profileForm.valid);
+        if (!this.profileForm.valid) {
+                this.isValidated=true;
                 console.log('user service');
-                this.userService.updateProfileUser(this.profileForm.value)
+                var token=USER_DATA.token;
+                var val1 = val+token;
+                this.userService.updateProfileUser(val)
                   .subscribe(
                       data => {      
                         if(data.result==1)

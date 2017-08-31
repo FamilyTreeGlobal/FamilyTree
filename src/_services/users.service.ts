@@ -22,7 +22,7 @@ export class UserService extends BaseService {
   }
     updateProfileUser(user : any){
     console.log('update profile');
-    return this.post('users/updateUser', user);
+    return this.post('users/updateProfileUser', user);
   }
   
   
