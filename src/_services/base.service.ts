@@ -37,8 +37,8 @@ export class BaseService {
 
 	protected post(url: string, data: any, isNoLoadingPanel?: boolean): any {
 		let options: RequestOptions;
-		var headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-		headers.set('authentication', 'Bearer ' + USER_DATA.token);	
+		//var headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+		//headers.set('authentication', 'Bearer ' + USER_DATA.token);	
 		return this.http.post(this.baseURL + url, JSON.stringify(data), this.getOptions(isNoLoadingPanel))
 			.map(res => {
 				this.hideLoadingPanel();

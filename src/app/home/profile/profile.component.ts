@@ -26,15 +26,16 @@ export class ProfileComponent implements OnInit {
   private profileUpdateComplete = false;
   private loginService: LoginService;
   
-  private fullname='';
-  private surname ='';
-  private dob ='';
-  private gender ='';
-  private maritalstatus ='';
-  private phone = '';
+  private fullname;
+  private surname ;
+  private dob ;
+  private gender;
+  private maritalstatus ;
+  private phone ;
   
 
-  constructor(private router: Router , userService: UserService ,loginService: LoginService ,private formBuilder: FormBuilder ) {
+  constructor(private router: Router , userService: UserService ,
+    loginService: LoginService ,private formBuilder: FormBuilder ) {
     this.userService = userService;
      this.profileForm = this.formBuilder.group({
             'fullname':['', [Validators.required]],
@@ -58,13 +59,18 @@ export class ProfileComponent implements OnInit {
         data => {         
             
             if(data.status!=401){     
-              let user=JSON.parse(data.result);
-              vm.fullname      =user.fullname;
-              vm.surname       =user.surname;
-              vm.gender        = user.gender ;              
-              vm.dob           =user.dob;
-              vm.maritalstatus =user.maritalstatus;
-              vm.phone         =user.phone;
+              console.log('user:'+data.result)
+              let user=data.result;
+              console.log('test:'+user.gender);
+              
+              this.profileForm.setValue({
+                fullname: user.fullname, 
+                surname: user.surname,
+                gender: user.gender.toString(), 
+                dob: user.dob,
+                maritalstatus: user.maritalstatus, 
+                phone: user.phone
+              });
             }else{
                 //vm.validationSummaryMsg = data.msg;                                    
             }
@@ -85,16 +91,17 @@ export class ProfileComponent implements OnInit {
         vm.router.navigate(['/forgotPassword']);  
     }
   
-    save(val: any, valid: any){
+  save(val: any, valid: any){
       console.log('entered into a save click event');
+       console.log(val);
          this.isPageLoad=false;    
          console.log('form valid staus'+this.profileForm.valid);
-        if (!this.profileForm.valid) {
+        if (this.profileForm.valid) {
                 this.isValidated=true;
                 console.log('user service');
                 var token=USER_DATA.token;
                 console.log('token'+token);
-                this.userService.updateProfileUser(val,token)
+                this.userService.updateProfileUser(val)
                   .subscribe(
                       data => {      
                         if(data.result==1)
