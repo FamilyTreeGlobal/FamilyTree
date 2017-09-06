@@ -1,11 +1,10 @@
 import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppModule } from '../../app.module';
-import { UserService , LoginService  } from '../../../_services/index';
+import { UserService  } from '../../../_services/index';
 import {  FormGroup, Validators  , FormBuilder, FormControlName  , FormControl} from '@angular/forms';
 import { ValidationService } from '../../validation.service';
 import { ForgotpasswordComponent } from '../.././login/forgotpassword.component';
-import { ControlMessages } from '../.././login/controlMessages';
 import { USER_DATA } from '../../common/user';
 
 
@@ -14,17 +13,18 @@ import { USER_DATA } from '../../common/user';
   templateUrl: './profile.component.html',
   styleUrls: [`../../login/signup.component.css`],
   encapsulation: ViewEncapsulation.None,
-  providers:[UserService , LoginService ]
+  providers:[UserService]
 
 })
 export class ProfileComponent implements OnInit {
-  private userService: UserService;
-  private userupdated=false;
-  private isValidated =true;
+ 
   private profileForm: FormGroup;
   private isPageLoad: boolean = true;
+  private userService: UserService;
+  private isValidated =true;
   private profileUpdateComplete = false;
-  private loginService: LoginService;
+  private userExists=false;
+  
   
   private fullname='';
   private surname ='';
@@ -34,14 +34,13 @@ export class ProfileComponent implements OnInit {
   private phone = '';
   
 
-  constructor(private router: Router , userService: UserService ,loginService: LoginService ,private formBuilder: FormBuilder ) {
+  constructor(private router: Router , userService: UserService  ,private formBuilder: FormBuilder ) {
     this.userService = userService;
      this.profileForm = this.formBuilder.group({
             'fullname':['', [Validators.required]],
             'surname' :['', [Validators.required]],
             'gender'  :['', [Validators.required]],
-            'dob'     :['', [Validators.required]],            
-            // 'email'   :['', [Validators.required, ValidationService.emailValidator]],
+            'dob'     :['', [Validators.required]],
             'phone':['', [Validators.required]],            
             'maritalstatus':['', [Validators.required]]
             
@@ -91,10 +90,12 @@ export class ProfileComponent implements OnInit {
          console.log('form valid staus'+this.profileForm.valid);
         if (!this.profileForm.valid) {
                 this.isValidated=true;
-                console.log('user service');
+                //console.log('user service');
                 var token=USER_DATA.token;
                 console.log('token'+token);
-                this.userService.updateProfileUser(val,token)
+                console.log('value ....'+ this.profileForm.value);
+                
+                this.userService.updateProfileUser(this.profileForm.value)
                   .subscribe(
                       data => {      
                         if(data.result==1)
