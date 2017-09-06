@@ -59,7 +59,7 @@ export class ProfileComponent implements OnInit {
             
             if(data.status!=401){     
               console.log('user:'+data.result)
-              let user=data.result;
+              let user = data.result;
               console.log('test:'+user.gender);
               
               this.profileForm.setValue({
@@ -100,7 +100,6 @@ export class ProfileComponent implements OnInit {
                 //console.log('user service');
                 var token=USER_DATA.token;
                 console.log('token'+token);
-                console.log('value ....'+ this.profileForm.value);
                 this.userService.updateProfileUser(val)
                   .subscribe(
                       data => {      
