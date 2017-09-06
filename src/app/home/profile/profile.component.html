@@ -38,7 +38,7 @@
                <tr>
                   <td>
                      <div class="group">
-                        <input  type="text" class="input-name" name="fullname" formControlName="fullname" value={{fullname}} id="txtfname"  maxlength="45"  required />
+                        <input  type="text" class="input-name" name="fullname" formControlName="fullname"  id="txtfname"  value={{fullname}} maxlength="45"   />
                         <span class="bar"></span>
                         <label id="ci1">Full name</label>
                      </div>
@@ -71,10 +71,10 @@
       <div class="row">
       <div class="col-md-12">
          <div id="genderupm" class="col-md-1">
-               <input type="radio" formControlName="gender" name="gender" value="Male" [checked]="gender == 0"  required> Male
+               <input type="radio" formControlName="gender" name="gender" value="male" [checked]="gender=='0'"  required> Male
             </div>
          <div id="genderupf" class="col-md-2">
-               <input  type="radio" formControlName="gender" name="gender" value="Female" [checked]="gender == 1" required> Female
+               <input  type="radio" formControlName="gender" name="gender" value="female" [checked]="gender=='1'" required> Female
             </div>
       </div>
       </div>
@@ -85,8 +85,8 @@
             <table id="cdate">
                <tr>
                   <td>
-                     <div class="group">
-                        <input type="text" class="ft_input_txt" name="dob" value="{{dob |date:'shortDate'}}" formControlName="dob" id="date"  required  />
+                     <div class="group">                          
+                        <input type="date" class="ft_input_txt" name="dob" value="{{dob |date:'shortDate'}}" formControlName="dob" id="date"  required  />
                         <span class="bar"></span>
                         <label id="da1">Date of birth</label>                       
                      </div>
@@ -130,7 +130,7 @@
       <div class="col-md-12" id="btndiv" >
          <a  href="" >
             <div class="col-md-2 col-md-offset-2">
-               <button id="profilecancelbt" type="submit" (click)="cancel();">Cancel</button>
+               <button id="profilecancelbt" type="button" (click)="cancel();">Cancel</button>
 		<button id="saveprofile" type="submit" >Save</button>
             </div>
          </a>
